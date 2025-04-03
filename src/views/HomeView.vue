@@ -1,9 +1,7 @@
 <script setup>
+import MainHeader from "@/components/MainHeader.vue";
 </script>
 
 <template>
-  <main>
-    <p>hej</p>
-    <img alt="PTPiPN logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-  </main>
+  <main-header/>
 </template>
