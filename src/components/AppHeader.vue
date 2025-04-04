@@ -45,7 +45,7 @@ export default {
     <div class="relative max-w flex place-content-center items-center h-20 gap-5 text-white font-sans text-md/5 lg:text-lg/5 xl:text-xl/6 2xl:text-2xl/6 text-center">
       <span class="max-h-20 w-5/12">
         <nav class="flex items-center float-right">
-          <RouterLink :to="{name: 'aktualnosci'}" class="p-5 rounded-4xl duration-150 hover:bg-white/10">Neonursing 2025</RouterLink>
+          <RouterLink :to="{name: 'neonursing'}" class="p-5 rounded-4xl duration-150 hover:bg-white/10">Neonursing 2024</RouterLink>
           <RouterLink :to="{name: 'aktualnosci'}" class="p-5 rounded-4xl duration-150 hover:bg-white/10">Aktualności</RouterLink>
         </nav>
       </span>

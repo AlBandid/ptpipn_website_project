@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-10 text-2xl xs:text-xs mt-20 mx-50 xs:mx-10">
+  <div class="flex flex-col gap-10 text-md sm:text-2xl mt-20 mx-10 sm:mx-50 place-items-center">
     <p>
       Polskie Towarzystwo Pielęgniarek i Położnych Neonatologicznych powstało 24 maja 2013 roku z inicjatywy środowiska łódzkich pielęgniarek i położnych neonatologicznych. Siedzibą Towarzystwa jest Instytut Centrum Zdrowia Matki - Polki w Łodzi.
     </p>
