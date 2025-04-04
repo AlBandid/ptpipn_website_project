@@ -1,9 +1,21 @@
-<script setup>
+<script>
 import { RouterView } from 'vue-router'
-import MainHeader from '@/components/MainHeader.vue'
+import AppHeader from "@/components/AppHeader.vue"
+import AppFooter from "@/components/AppFooter.vue"
 
+export default {
+  name: 'App',
+  components: {
+    AppHeader,
+    RouterView,
+    AppFooter,
+  },
+
+}
 </script>
 
 <template>
-  <RouterView />
+  <app-header/>
+  <RouterView class="mb-20"/>
+  <app-footer/>
 </template>
