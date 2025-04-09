@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import AktualnosciView from "@/views/AktualnosciView.vue";
+import PostView from "@/views/PostView.vue";
 import NeonursingView from "@/views/NeonursingView.vue";
 
 const routes = [
@@ -21,10 +22,19 @@ const routes = [
     component: AktualnosciView,
   },
   {
+    path: '/post/:id',
+    name: 'post',
+    component: PostView,
+  },
+  {
     path: '/neonursing',
     name: 'neonursing',
     component: NeonursingView,
   },
+  {
+    path: '/:catchAll(.*)*',
+    redirect: {name: 'home'},
+  }
 ]
 
 const router = createRouter({
