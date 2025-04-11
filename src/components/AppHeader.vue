@@ -1,42 +1,23 @@
-<script>
+<script setup>
 import {RouterLink} from "vue-router";
-import {ref} from "vue";
-export default {
-  name: 'AppHeader',
-  components: {
-    RouterLink
-  },
-  setup() {
-    let header_class = ref("");
-    let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20");
-    function handleScroll(event) {
-      console.log(event)
-      console.log(document.body.scrollTop);
-      console.log(window.scrollY);
-      if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600) {
-        header_class.value = "sticky top-0 bg-fuchsia-900/80 backdrop-blur-sm duration-150 drop-shadow-lg"
-        top_header_bg_class.value = ""
-      } else {
-        header_class.value = ""
-        top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20"
-      }
+import {ref, onBeforeUnmount} from "vue";
 
-      console.log(top_header_bg_class)
-    }
-
-    window.addEventListener('scroll', handleScroll, {passive: true});
-
-    return {
-      header_class,
-      top_header_bg_class,
-      handleScroll,
-    }
-  },
-  onBeforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+let header_class = ref("");
+let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20");
+function handleScroll() {
+  if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600) {
+    header_class.value = "sticky top-0 bg-fuchsia-900/80 backdrop-blur-sm duration-150 drop-shadow-lg"
+    top_header_bg_class.value = ""
+  } else {
+    header_class.value = ""
+    top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20"
   }
 }
+window.addEventListener('scroll', handleScroll, {passive: true});
 
+onBeforeUnmount(()=>{
+  window.removeEventListener('scroll', handleScroll, {passive: true});
+})
 </script>
 
 <template>

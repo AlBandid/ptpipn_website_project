@@ -1,9 +1,19 @@
 <script>
+import {computed, defineAsyncComponent} from "vue";
+
 export default {
   name: 'AktualnosciItem',
   props: {
     post: Object
-  }
+  },
+  setup(props) {
+    const trescPosta = computed(()=>{return defineAsyncComponent(() => import(`../tmp_posts/tresc_${props.post.id}.vue`))})
+
+    return {
+      trescPosta
+    }
+  },
+
 }
 </script>
 
@@ -13,6 +23,8 @@ export default {
     {{post.title}}
   </router-link>
   <p class="italic text-base">13.05.2021</p>
-  <p class="line-clamp-3">{{post.tresc}}</p>
+  <div class="line-clamp-3">
+    <component :is="trescPosta"></component>
+  </div>
 </div>
 </template>

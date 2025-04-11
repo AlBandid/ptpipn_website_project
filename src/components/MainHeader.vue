@@ -9,5 +9,3 @@
     <p class="m-6">Neonatologicznych</p>
   </div>
 </template>
-<script setup>
-</script>
