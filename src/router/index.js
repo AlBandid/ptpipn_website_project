@@ -4,6 +4,8 @@ import AboutView from '../views/AboutView.vue'
 import AktualnosciView from "@/views/AktualnosciView.vue";
 import PostView from "@/views/PostView.vue";
 import NeonursingView from "@/views/NeonursingView.vue";
+import SprCzlView from "@/views/SprCzlView.vue";
+import KontaktView from "@/views/KontaktView.vue";
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/neonursing',
     name: 'neonursing',
     component: NeonursingView,
+  },
+  {
+    path: '/sprawy-czlonkowskie',
+    name: 'sprawyCzlonkowskie',
+    component: SprCzlView,
+  },
+  {
+    path: '/kontakt',
+    name: 'kontakt',
+    component: KontaktView,
   },
   {
     path: '/:catchAll(.*)*',

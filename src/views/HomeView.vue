@@ -19,7 +19,8 @@ const posty = [
 
 <template>
   <main-header/>
-  <div class="text-2xl xs:text-xs mt-50 mx-50 xs:mx-10 flex flex-col gap-30">
+  <div class="h-60 md:h-50 lg:h-40 xl:h-30"/>
+  <div class="text-2xl xs:text-xs mt-20 mx-10 lg:mx-50 flex flex-col gap-30">
     <p class="text-center">Naszym celem jest podnoszenie jakości opieki nad noworodkiem i jego rodziną oraz propagowanie i rozwój pielęgniarstwa neonatologicznego na jak najwyższym poziomie.</p>
     <div class="flex flex-col place-items-center gap-10">
       <p class="text-2xl text-fuchsia-950 font-bold">SPRAWDŹ NASZE AKTUALNOŚCI</p>

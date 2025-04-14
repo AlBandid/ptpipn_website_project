@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col gap-10 text-md sm:text-2xl mt-20 mx-10 sm:mx-50 place-items-center">
+  <div class="app-view-content text-md lg:text-2xl place-items-center place-content-center">
+    <div class="mx-auto max-w-10/12 w-150 h-25 md:h-35 lg:h-45 xl:h-55 2xl:h-65 bg-[url(/img/identyfikator_ptpipn.png)] bg-contain bg-no-repeat"/>
     <p>
       Polskie Towarzystwo Pielęgniarek i Położnych Neonatologicznych powstało 24 maja 2013 roku z inicjatywy środowiska łódzkich pielęgniarek i położnych neonatologicznych. Siedzibą Towarzystwa jest Instytut Centrum Zdrowia Matki - Polki w Łodzi.
     </p>
@@ -10,8 +11,11 @@
       Naszym celem jest podnoszenie jakości opieki nad noworodkiem i jego rodziną oraz propagowanie i rozwój pielęgniarstwa neonatologicznego na jak najwyższym poziomie. Organizowanie różnych form szkolenia podyplomowego, działalność naukowa i wydawnicza, kreowanie wizerunku pielęgniarki i położnej neonatologicznej, a także troska o nasze stanowiska pracy.
     </p>
     <p>
-      Zapraszamy wszystkie chętne pielęgniarki / położne neonatologiczne do współpracy z nami o kontakt drogą mailową. W zakładce Sprawy członkowskie znajdziecie państwo deklarację członkowską, którą po wypełnieniu i podpisaniu można przesłać do nas pocztą na adres ICZMP, lub drogą elektroniczną po zeskanowaniu wypełnionego i podpisanego dokumentu.
+      Zapraszamy wszystkie chętne pielęgniarki/położne neonatologiczne do współpracy z nami o kontakt drogą mailową. W zakładce Sprawy członkowskie znajdziecie państwo deklarację członkowską, którą po wypełnieniu i podpisaniu można przesłać do nas pocztą na adres ICZMP, lub drogą elektroniczną po zeskanowaniu wypełnionego i podpisanego dokumentu.
     </p>
+    <div class="app-section-title mt-20 mb-5">
+      <p>Struktura PTPiPN</p>
+    </div>
     <div class="grid grid-cols-2 gap-2 max-w-6/12">
       <p class="font-bold">Prezes</p>
       <p>Elżbieta Kozioł</p>

@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-<div class="flex flex-col gap-10 text-md sm:text-2xl mt-20 mx-10 lg:mx-50 place-items-center">
+<div class="app-view-content text-md sm:text-2xl place-items-center">
   <div v-for="(post, index) in posty" :key="index">
     <aktualnosci-item :post="post"/>
   </div>

@@ -28,8 +28,8 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-5 mt-10 mx-10 lg:mx-50">
-    <div class="text-2xl lg:text-4xl font-bold">
+  <div class="app-view-content">
+    <div class="app-section-title">
       <p>{{post.title}}</p>
     </div>
     <div class="text-lg lg:text-xl text-justify">
