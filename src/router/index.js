@@ -24,9 +24,10 @@ const routes = [
     component: AktualnosciView,
   },
   {
-    path: '/post/:id',
+    path: '/post/:idPosta',
     name: 'post',
     component: PostView,
+    props: true
   },
   {
     path: '/neonursing',

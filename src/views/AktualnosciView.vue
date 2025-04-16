@@ -23,7 +23,6 @@ export default {
       pendingRequest.value = true;
       let postsSnapshot
       if(posty.length > 0){
-        console.log('kolejna partia')
         const lastPost = await getDoc(doc(postsCollection, posty[posty.length-1].docID))
         postsSnapshot = await getDocs(
           query(
@@ -34,7 +33,6 @@ export default {
           )
         )
       } else {
-        console.log('pierwsza partia')
         postsSnapshot = await getDocs(
           query(
             postsCollection,
@@ -45,9 +43,7 @@ export default {
       }
 
       postsSnapshot.forEach((doc) => {
-        console.log(doc.id)
         posty.push({ ...doc.data(), docID: doc.id })
-        console.log(posty)
       })
       pendingRequest.value = false;
     }
@@ -79,10 +75,9 @@ export default {
 
 <template>
 <div class="app-view-content text-md sm:text-2xl place-items-center">
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-10">
     <div v-for="post in posty" :key="post.docID">
       <aktualnosci-item :post="post" :id="`post-id-${post.docID}`"/>
-      <!--    :id="`post-id-${post.docID}`"-->
     </div>
   </div>
 </div>

@@ -1,37 +1,45 @@
-<script setup>
-import {onBeforeMount, reactive, computed, defineAsyncComponent} from "vue";
-import {useRoute} from "vue-router";
+<script>
+import { defineAsyncComponent} from "vue";
+import { postsCollection } from "@/includes/firebase.js";
+import { getDocs, query, where, limit } from "firebase/firestore";
 
-let post = reactive({})
-let trescPosta = computed(()=>{
-  return defineAsyncComponent(() => import(`../tmp_posts/tresc_${post.id}.vue`))
-  //W0nVQLNbTlcEjjryViU9
-})
+export default {
+  name: "PostView",
+  props: {
+    idPosta: String,
+    documentID: String,
+  },
+  data() {
+    return {
+      post: {},
+    }
+  },
+  computed: {
+    trescPosta() {
+      return defineAsyncComponent(() => import(`../tmp_posts/tresc_${this.$route.params.idPosta}.vue`))
+    }
+  },
+  async created() {
+    const postsSnapshot = await getDocs(query(postsCollection, where('url_ending', '==', this.$route.params.idPosta), limit(1)))
 
-onBeforeMount(() => {
-  const postID = useRoute().params.id
-  const posty = [
-    {
-      id: 'post1',
-      title: 'Post 1',
-    },
-    {
-      id: 'post2',
-      title: 'Post 2',
-    },
-    {
-      id: 'post3',
-      title: 'Post 3',
-    },
-  ]
-  post = posty.find((p) => p.id === postID)
-})
+    if(postsSnapshot.size === 0){
+      this.$router.push({name: 'home'})
+      return
+    }
+
+    postsSnapshot.forEach((doc) => {
+      this.post = Object.assign(this.post, { ...doc.data(), docID: doc.id })
+    })
+  }
+}
+
+
 </script>
 
 <template>
   <div class="app-view-content">
     <div class="app-section-title">
-      <p>{{post.title}}</p>
+      <p>{{post.postTitle}}</p>
     </div>
     <div class="text-lg lg:text-xl text-justify">
       <component :is="trescPosta"></component>

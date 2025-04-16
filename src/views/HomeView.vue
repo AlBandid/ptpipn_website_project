@@ -1,20 +1,39 @@
 <script setup>
 import MainHeader from "@/components/MainHeader.vue";
 import AktualnosciItem from "@/components/AktualnosciItem.vue";
-const posty = [
-  {
-    id: 'post1',
-    title: 'Post 1',
-  },
-  {
-    id: 'post2',
-    title: 'Post 2',
-  },
-  {
-    id: 'post3',
-    title: 'Post 3',
+import {onBeforeMount, reactive, ref} from "vue";
+import {getDocs, limit, orderBy, query} from "firebase/firestore";
+import {postsCollection} from "@/includes/firebase.js";
+
+const posty = reactive([])
+const pendingRequest = ref(false)
+
+async function requestTop3Posts() {
+  if(pendingRequest.value){
+    console.log('there is a pending request already')
+    return
   }
-]
+
+  console.log('loading posts')
+  pendingRequest.value = true;
+  let postsSnapshot = await getDocs(
+    query(
+      postsCollection,
+      orderBy('postTitle','desc'),
+      limit(3)
+    )
+  )
+
+  postsSnapshot.forEach((doc) => {
+    posty.push({ ...doc.data(), docID: doc.id })
+  })
+  pendingRequest.value = false;
+}
+
+onBeforeMount(() => {
+  requestTop3Posts()
+})
+
 </script>
 
 <template>
@@ -25,7 +44,7 @@ const posty = [
     <div class="flex flex-col place-items-center gap-10">
       <p class="text-2xl text-fuchsia-950 font-bold">SPRAWDŹ NASZE AKTUALNOŚCI</p>
       <div class="flex flex-col lg:flex-row gap-10 text-md lg:text-2xl mx-10 lg:mx-50 place-items-center md:place-content-center">
-        <div v-for="(post, index) in posty" :key="index">
+        <div v-for="post in posty" :key="post.docID">
           <aktualnosci-item :post="post"/>
         </div>
       </div>

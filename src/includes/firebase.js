@@ -8,7 +8,6 @@ import {
   persistentMultipleTabManager,
   CACHE_SIZE_UNLIMITED
 } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -30,8 +29,5 @@ initializeFirestore(app, {
 })
 const db = getFirestore(app)
 const postsCollection = collection(db, "posts");
-const storage = getStorage(app);
 
-export { db, postsCollection, storage };
-
-//aq2ZSkV1EMUP9HBLJLDx
+export { db, postsCollection };
