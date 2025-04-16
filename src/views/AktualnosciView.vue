@@ -1,28 +1,74 @@
 <script>
 import AktualnosciItem from "@/components/AktualnosciItem.vue";
+import { reactive, ref, onBeforeMount, onBeforeUnmount } from "vue";
+import { postsCollection } from "@/includes/firebase.js";
+import { doc, getDoc, getDocs, query, limit, orderBy, startAfter } from 'firebase/firestore'
 export default {
   name: 'AktualnosciView',
   components: {
     AktualnosciItem
   },
   setup(){
-    const posty = [
-      {
-        id: 'post1',
-        title: 'Post 1',
-        tresc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisi turpis, faucibus ac dui ut, consequat laoreet nisl. Donec vel ullamcorper ipsum. Nam vulputate elementum aliquam. Nam commodo orci a lacus feugiat, id porta urna faucibus. In nulla orci, ullamcorper ut condimentum a, rhoncus posuere ligula. Cras venenatis felis vel risus iaculis fermentum non eget nisl. Ut luctus finibus nibh, eget auctor risus feugiat eget. Aenean non maximus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam et magna arcu. In venenatis sagittis erat, id vestibulum massa elementum eget. Praesent id elit erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec viverra mauris sit amet mauris pellentesque bibendum. Nunc lorem ante, pulvinar nec rhoncus et, suscipit ac ligula. Praesent in euismod erat.'
-      },
-      {
-        id: 'post2',
-        title: 'Post 2',
-        tresc: 'Vivamus vulputate vel justo nec finibus. Donec dictum, metus eget auctor tristique, eros nisi luctus mi, sed blandit lectus magna vel nulla. Nulla facilisi. Pellentesque lobortis pulvinar mauris, vel tempor lacus vulputate rhoncus. Pellentesque varius ex eget tellus lobortis, non auctor odio laoreet. Ut bibendum lorem at accumsan fringilla. Sed maximus vitae arcu sed eleifend. Aenean mauris mauris, iaculis nec ullamcorper in, iaculis in quam. Ut pretium sapien est, eget accumsan ex tempus vel. Phasellus at tellus accumsan odio lobortis pellentesque ut et turpis. Maecenas non odio tellus. Aenean in leo bibendum massa efficitur faucibus scelerisque non lectus. Sed rhoncus, sem non convallis ornare, ex velit interdum lectus, nec scelerisque nisl enim sed massa. Duis fermentum mi sed risus aliquet, eu lacinia augue dictum. Donec ullamcorper facilisis consequat.'
-      },
-      {
-        id: 'post3',
-        title: 'Post 3',
-        tresc: 'Sed lacinia odio ligula, in condimentum enim dapibus sit amet. Donec dictum feugiat elementum. Sed nec diam enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut orci non diam auctor volutpat. In accumsan, diam eu ullamcorper convallis, purus sem accumsan nisi, id fringilla magna nulla maximus mi. Morbi vel mattis tortor, porta finibus mi. Sed magna purus, pellentesque vitae est non, sollicitudin pretium ante. Vivamus purus ligula, condimentum id nisl a, tincidunt dapibus nibh. Proin justo augue, sollicitudin a sodales non, accumsan quis purus. Sed faucibus pulvinar euismod. Nunc vel egestas enim. Nullam eu convallis arcu, eu mattis nisi.'
+    const posty = reactive([])
+    const scroll_interval = ref(10)
+    const pendingRequest = ref(false)
+
+    async function requestPosts() {
+      if(pendingRequest.value){
+        console.log('there is a pending request already')
+        return
       }
-    ]
+
+      console.log('loading posts')
+      pendingRequest.value = true;
+      let postsSnapshot
+      if(posty.length > 0){
+        console.log('kolejna partia')
+        const lastPost = await getDoc(doc(postsCollection, posty[posty.length-1].docID))
+        postsSnapshot = await getDocs(
+          query(
+            postsCollection,
+            orderBy('postTitle','desc'),
+            startAfter(lastPost),
+            limit(scroll_interval.value)
+          )
+        )
+      } else {
+        console.log('pierwsza partia')
+        postsSnapshot = await getDocs(
+          query(
+            postsCollection,
+            orderBy('postTitle','desc'),
+            limit(scroll_interval.value)
+          )
+        )
+      }
+
+      postsSnapshot.forEach((doc) => {
+        console.log(doc.id)
+        posty.push({ ...doc.data(), docID: doc.id })
+        console.log(posty)
+      })
+      pendingRequest.value = false;
+    }
+
+    async function handleScroll(){
+      const {scrollTop, offsetHeight} = document.documentElement
+      const {innerHeight} = window
+      const bottomOfWindow = Math.round(scrollTop) + innerHeight === offsetHeight
+      if(bottomOfWindow) {
+        await requestPosts()
+      }
+    }
+
+    onBeforeMount(() => {
+      requestPosts()
+      window.addEventListener('scroll', handleScroll)
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('scroll', handleScroll)
+    })
 
     return {
       posty,
@@ -33,8 +79,11 @@ export default {
 
 <template>
 <div class="app-view-content text-md sm:text-2xl place-items-center">
-  <div v-for="(post, index) in posty" :key="index">
-    <aktualnosci-item :post="post"/>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+    <div v-for="post in posty" :key="post.docID">
+      <aktualnosci-item :post="post" :id="`post-id-${post.docID}`"/>
+      <!--    :id="`post-id-${post.docID}`"-->
+    </div>
   </div>
 </div>
 </template>

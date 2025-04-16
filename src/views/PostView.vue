@@ -5,6 +5,7 @@ import {useRoute} from "vue-router";
 let post = reactive({})
 let trescPosta = computed(()=>{
   return defineAsyncComponent(() => import(`../tmp_posts/tresc_${post.id}.vue`))
+  //W0nVQLNbTlcEjjryViU9
 })
 
 onBeforeMount(() => {
