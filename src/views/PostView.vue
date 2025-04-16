@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     trescPosta() {
-      return defineAsyncComponent(() => import(`../tmp_posts/tresc_${this.$route.params.idPosta}.vue`))
+      return defineAsyncComponent(() => import(`../aktualnosci_posts/tresc_${this.$route.params.idPosta}.vue`))
     }
   },
   async created() {

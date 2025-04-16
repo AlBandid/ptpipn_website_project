@@ -1,0 +1,35 @@
+import { configure, defineRule, ErrorMessage, Field as VeeField, Form as VeeForm } from 'vee-validate'
+import { required, min, max } from '@vee-validate/rules'
+
+export default {
+  install(app){
+    app.component('VeeForm', VeeForm)
+    app.component('VeeField', VeeField)
+    app.component('ErrorMessage', ErrorMessage)
+
+    defineRule('required', required)
+    defineRule('min', min)
+    defineRule('max', max)
+    defineRule('isEmailOrNumber', (value)=>{
+      if(!/.*[@]+/.test(value) && !/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/.test(value)){
+        return 'Niepoprawny email lub numer telefonu'
+      }
+      return true
+    })
+
+    configure({
+      generateMessage: (ctx) => {
+        const messages = {
+          required: 'Pole wymagane',
+          min: `Min. ${ctx.rule.params} znaków`,
+          max: `Maks. ${ctx.rule.params} znaków`
+        }
+        return messages[ctx.rule.name] ? messages[ctx.rule.name] : 'Wprowadzono niepoprawne dane'
+      },
+      validateOnBlur: true,
+      validateOnChange: true,
+      validateOnInput: false,
+      validateOnModelUpdate: true
+    })
+  }
+}

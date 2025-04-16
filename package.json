@@ -16,9 +16,16 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.1",
+    "@vee-validate/rules": "^4.15.0",
+    "@vue-email/components": "^0.0.21",
+    "@vue-email/render": "^0.0.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "firebase": "^11.6.0",
+    "nodemailer": "^6.10.1",
     "pinia": "^3.0.1",
     "tailwindcss": "^4.1.1",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
