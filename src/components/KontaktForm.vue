@@ -20,13 +20,32 @@ async function sendForm(values) {
   form_alert_msg.value = 'Proszę czekać, przesyłamy Twoje zapytanie'
 
   try{
-    //tu wysylamy formularz
     console.log(values)
+
+    const res = await fetch("https://us-central1-ptpipn-strona-test.cloudfunctions.net/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "aleksandrakoziol77@gmail.com",
+        subject: "Test Email",
+        message: "This is a test from my Vue app!",
+      }),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      alert('Email sent successfully!');
+    } else {
+      alert('Failed to send email.');
+    }
+
   } catch (e) {
     console.log(e)
     form_in_submission.value = false
     form_alert_variant.value = 'bg-red-500'
-    form_alert_msg.value = `Wystąpił błąd przy przesyłaniu zapytania.<br>Spróbuj ponownie lub skontaktuj się z działem technicznym<br>Błąd: ${e.message}`
+    form_alert_msg.value = `Wystąpił błąd przy przesyłaniu zapytania. \n Spróbuj ponownie lub skontaktuj się z działem technicznym \n Błąd: ${e.message}`
     return
   }
 

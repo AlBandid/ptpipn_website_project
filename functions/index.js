@@ -1,40 +1,81 @@
-import functions from 'firebase-functions';
-import nodemailer from 'nodemailer';
-import cors from 'cors';
-import dotenv from 'dotenv';
+// eslint-disable-next-line no-undef
+const functions = require('firebase-functions');
+// eslint-disable-next-line no-undef
+const nodemailer = require('nodemailer');
+// eslint-disable-next-line no-undef
+const { google } = require('googleapis');
+// eslint-disable-next-line no-undef
+const cors = require('cors');
 
-dotenv.config();
-
+// CORS middleware
 const corsHandler = cors({ origin: true });
 
-// eslint-disable-next-line no-undef
-const gmailEmail = process.env.GMAIL_EMAIL;
-// eslint-disable-next-line no-undef
-const gmailPass = process.env.GMAIL_PASSWORD;
+// OAuth2 setup
+const OAuth2 = google.auth.OAuth2;
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: gmailEmail,
-    pass: gmailPass
-  }
+const oauth2Client = new OAuth2(
+  // eslint-disable-next-line no-undef
+  process.env.GMAIL_CLIENT_ID,
+  // eslint-disable-next-line no-undef
+  process.env.GMAIL_CLIENT_SECRET,
+  'https://developers.google.com/oauthplayground' // Redirect URI
+);
+
+oauth2Client.setCredentials({
+  // eslint-disable-next-line no-undef
+  refresh_token: process.env.GMAIL_REFRESH_TOKEN,
 });
 
-export const sendEmail = functions.https.onRequest((req, res) => {
+async function createTransporter() {
+  const accessTokenResponse = await oauth2Client.getAccessToken();
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: 'your-email@gmail.com',
+      // eslint-disable-next-line no-undef
+      clientId: process.env.GMAIL_CLIENT_ID,
+      // eslint-disable-next-line no-undef
+      clientSecret: process.env.GMAIL_CLIENT_SECRET,
+      // eslint-disable-next-line no-undef
+      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      accessToken: accessTokenResponse.token,
+    },
+  });
+
+  return transporter;
+}
+
+// eslint-disable-next-line no-undef
+exports.sendEmail = functions.https.onRequest(async (req, res) => {
+  console.log('Received request method:', req.method);
   corsHandler(req, res, async () => {
+    if (req.method !== 'POST') {
+      return res.status(405).send({ error: 'Only POST requests are allowed' });
+    }
+
     const { to, subject, message } = req.body;
 
+    if (!to || !subject || !message) {
+      return res.status(400).send({ error: 'Missing required fields' });
+    }
+
     try {
-      await transporter.sendMail({
-        from: gmailEmail,
+      const transporter = await createTransporter();
+
+      const mailOptions = {
+        from: 'your-email@gmail.com',
         to,
         subject,
-        text: message
-      });
-      res.status(200).send({ success: true });
+        text: message,
+      };
+
+      await transporter.sendMail(mailOptions);
+      return res.status(200).send({ success: true });
     } catch (error) {
-      console.error(error);
-      res.status(500).send({ success: false, error });
+      console.error('Error sending email:', error);
+      return res.status(500).send({ success: false, error: error.toString() });
     }
   });
 });
