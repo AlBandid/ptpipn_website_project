@@ -29,17 +29,12 @@ async function sendForm(values) {
       },
       body: JSON.stringify({
         to: "aleksandrakoziol77@gmail.com",
-        subject: "Test Email",
-        message: "This is a test from my Vue app!",
+        subject: `[ZAPYTANIE] ${values.title}`,
+        message: `Witaj,\nOtrzymałeś nowe zapytanie ze strony PTPiPN:\n\n${values.message}\n\nKontakt zwrotny: ${values.contact}`,
       }),
     });
 
-    const data = await res.json();
-    if (data.success) {
-      alert('Email sent successfully!');
-    } else {
-      alert('Failed to send email.');
-    }
+    await res.json();
 
   } catch (e) {
     console.log(e)
