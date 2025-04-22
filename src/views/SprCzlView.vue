@@ -24,7 +24,13 @@
       </p>
     </div>
     <div class="app-section-title mt-10 text-fuchsia-900">
-      <a href="https://ptpipn.sorga.pl/user/notifications" target="_blank" rel="noopener noreferrer">Panel członkowski &#x27A4;</a>
+      <a href="@/docs/PTPiPN_Statut_2022.pdf" download="PTPiPN_Statut_2022">Statut PTPiPN</a>
+    </div>
+    <div class="app-section-title text-fuchsia-900">
+      <a href="@/docs/deklaracja_czlonkowska.docx" download="deklaracja_czlonkowska">Deklaracja członkowska</a>
+    </div>
+    <div class="app-section-title mt-10 text-fuchsia-900">
+      <a href="https://ptpipn.sorga.pl/user/notifications" target="_blank" rel="noopener noreferrer">Panel członkowski ➤</a>
     </div>
   </div>
 </template>
