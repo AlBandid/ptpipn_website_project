@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="app-section-block">
+  <div id="swiatowy-dzien-wczesniaka" class="app-section-block">
     <div class="app-section-title">
       <p>Światowy Dzień Wcześniaka</p>
     </div>
@@ -29,7 +29,7 @@
       </p>
     </div>
   </div>
-  <div class="app-section-block">
+  <div id="covid-19" class="app-section-block">
     <div class="app-section-title">
       <p>COVID-19</p>
     </div>
