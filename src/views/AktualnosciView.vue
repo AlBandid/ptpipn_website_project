@@ -74,7 +74,7 @@ export default {
 </script>
 
 <template>
-<div class="app-view-content text-md sm:text-2xl place-items-center">
+<div>
   <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-10">
     <div v-for="post in posty" :key="post.docID">
       <aktualnosci-item :post="post" :id="`post-id-${post.docID}`"/>

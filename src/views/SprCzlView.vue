@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="app-view-content">
+<div>
+  <div class="app-section-block">
     <div class="app-section-title">
       <p>Składka członkowska</p>
     </div>
@@ -14,7 +15,9 @@
         W tytule przelewu prosimy o wpisanie swoich danych i rok, za który wpłacana jest opłata członkowska.
       </p>
     </div>
-    <div class="app-section-title mt-10">
+  </div>
+  <div class="app-section-block">
+    <div class="app-section-title">
       <p>Zebrania</p>
     </div>
     <div class="text-lg lg:text-xl text-justify">
@@ -23,15 +26,20 @@
         Miejscem spotkań jest siedziba PTPiPN w Łodzi. O szczegółach wszystkich spotkań będziemy Państwa na bieżąco informować w aktualnościach.
       </p>
     </div>
-    <div class="app-section-title mt-10 text-fuchsia-900">
+  </div>
+  <div>
+    <div class="app-section-title app-link">
       <a href="@/docs/PTPiPN_Statut_2022.pdf" download="PTPiPN_Statut_2022">Statut PTPiPN</a>
     </div>
-    <div class="app-section-title text-fuchsia-900">
+    <div class="app-section-title app-link">
       <a href="@/docs/deklaracja_czlonkowska.docx" download="deklaracja_czlonkowska">Deklaracja członkowska</a>
     </div>
-    <div class="app-section-title mt-10 text-fuchsia-900">
+  </div>
+  <div>
+    <div class="app-section-title app-link">
       <a href="https://ptpipn.sorga.pl/user/notifications" target="_blank" rel="noopener noreferrer">Panel członkowski ➤</a>
     </div>
   </div>
+</div>
 </template>
 

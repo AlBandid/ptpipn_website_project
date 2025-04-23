@@ -56,11 +56,11 @@ async function sendForm(values) {
 </script>
 
 <template>
-  <div>
+  <div class="app-section-block">
     <div class="app-section-title">
       <p>Napisz do nas</p>
     </div>
-    <div class="text-lg lg:text-xl text-justify mt-10">
+    <div class="text-lg lg:text-xl text-justify">
       <div
         class="text-white text-center font-bold p-4 rounded mb-4"
         v-if="form_show_alert"

@@ -6,6 +6,7 @@ import PostView from "@/views/PostView.vue";
 import NeonursingView from "@/views/NeonursingView.vue";
 import SprCzlView from "@/views/SprCzlView.vue";
 import KontaktView from "@/views/KontaktView.vue";
+import BankWiedzyView from '@/views/BankWiedzyView.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/kontakt',
     name: 'kontakt',
     component: KontaktView,
+  },
+  {
+    path: '/bank-wiedzy',
+    name: 'bankWiedzy',
+    component: BankWiedzyView,
   },
   {
     path: '/:catchAll(.*)*',

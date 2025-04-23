@@ -37,7 +37,8 @@ export default {
 </script>
 
 <template>
-  <div class="app-view-content">
+<div>
+  <div class="app-section-block">
     <div class="app-section-title">
       <p>{{post.postTitle}}</p>
     </div>
@@ -45,4 +46,5 @@ export default {
       <component :is="trescPosta"></component>
     </div>
   </div>
+</div>
 </template>

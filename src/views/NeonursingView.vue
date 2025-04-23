@@ -124,7 +124,7 @@ export default {
 </script>
 
 <template>
-<div class="app-view-content text-md lg:text-2xl place-items-center text-justify">
+<div class="text-md lg:text-2xl place-items-center text-justify">
   <div class="w-100 h-100 bg-[url(/img/neonursing_2024.jpg)] bg-contain bg-no-repeat"/>
   <p>
     Zapraszamy na coroczną Ogólnopolską Konferencję środowiska położnych i pielęgniarek
@@ -141,9 +141,9 @@ export default {
     PROVENA Monika Rutkowska-Drozd, telefon: 695 271 227, e-mail: biuro@provena.com.pl <br>
     W kwestiach merytorycznych prosimy o kontakt z Zarządem PTPiPN, telefon: info@ptpipn.pl
   </p>
-  <section id="program" class="flex flex-col gap-5 mt-10 place-items-center">
+  <section id="program" class="app-section-block mt-10 place-items-center">
     <button type="button" v-if="rejestracja_otwarta" class="p-2 bg-stone-50 border-2 border-stone-100 drop-shadow-lg drop-shadow-stone-200">REJESTRACJA</button>
-    <p v-else class="text-fuchsia-900">WSZYSTKIE MIEJSCA NA KONFERENCJĘ ZOSTAŁY WYPEŁNIONE</p>
+    <p v-else class="text-red-800 font-bold">WSZYSTKIE MIEJSCA NA KONFERENCJĘ ZOSTAŁY WYPEŁNIONE</p>
     <p class="text-3xl">PROGRAM KONFERENCJI</p>
     <div>
       <div

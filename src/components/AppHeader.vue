@@ -1,18 +1,18 @@
 <script setup>
 import {RouterLink, useRoute} from "vue-router";
-import {ref, onBeforeUnmount} from "vue";
+import { ref, onBeforeUnmount, reactive } from 'vue'
 
 let route = useRoute();
 
 let header_class = ref("");
-let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20");
+let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20");
 function handleScroll() {
   if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600) {
-    header_class.value = "sticky top-0 bg-fuchsia-900/80 backdrop-blur-sm duration-150 drop-shadow-lg"
+    header_class.value = "sticky top-0 bg-fuchsia-900/70 backdrop-blur-sm duration-150 drop-shadow-lg"
     top_header_bg_class.value = ""
   } else {
     header_class.value = ""
-    top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/80 -z-3 h-20"
+    top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20"
   }
 }
 window.addEventListener('scroll', handleScroll, {passive: true});
@@ -29,6 +29,7 @@ onBeforeUnmount(()=>{
       <span class="max-h-20 w-5/12">
         <span class="flex items-center float-right">
           <RouterLink :to="{name: 'neonursing'}" class="app-menu-button">Neonursing 2024</RouterLink>
+          <RouterLink :to="{name: 'bankWiedzy'}" class="app-menu-button">Bank wiedzy</RouterLink>
           <RouterLink :to="{name: 'aktualnosci'}" class="app-menu-button">Aktualności</RouterLink>
         </span>
       </span>
