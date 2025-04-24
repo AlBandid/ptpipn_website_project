@@ -43,6 +43,43 @@
   color: var(--color-fuchsia-800);
 }
 
+.app-form-field {
+/*  block w-full py-1.5 px-3 text-gray-800 border-gray-300 border-2 transition duration-500 focus:outline-none focus:border-fuchsia-800 rounded caret-fuchsia-800*/
+  display: block;
+  width: 100%;
+  padding-block: calc(var(--spacing) * 1.5);
+  padding-inline: calc(var(--spacing) * 3);
+  color: var(--color-gray-800);
+  border-color: var(--color-gray-300);
+  border-width: 2px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-timing-function: var(--default-transition-timing-function); /* cubic-bezier(0.4, 0, 0.2, 1) */
+  transition-duration: 500ms;
+  border-radius: var(--radius-md);
+  caret-color: var(--color-fuchsia-800);
+}
+.app-form-field:focus {
+  outline: none;
+  border-color: var(--color-fuchsia-800);
+}
+
+.app-button {
+/*  block py-1.5 bg-fuchsia-900 text-white rounded transition duration-500 hover:bg-fuchsia-700 cursor-pointer*/
+  display: block;
+  padding-block: calc(var(--spacing) * 1.5);
+  padding-inline: calc(var(--spacing) * 3);
+  background-color: var(--color-fuchsia-900);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-timing-function: var(--default-transition-timing-function); /* cubic-bezier(0.4, 0, 0.2, 1) */
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+.app-form-button:hover {
+  background-color: var(--color-fuchsia-700);
+}
+
 /* lg */
 @media (width >= 64rem) {
   .app-view-content {

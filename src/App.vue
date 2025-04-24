@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div>
-    <app-header/>
+    <app-header class="z-1"/>
     <RouterView class="mb-20 h-auto min-h-[68.5vh] app-view-content" />
     <app-footer/>
   </div>

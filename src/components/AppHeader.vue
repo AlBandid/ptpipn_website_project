@@ -3,6 +3,7 @@ import {RouterLink, useRoute} from "vue-router";
 import { ref, onBeforeUnmount, reactive } from 'vue'
 
 let route = useRoute();
+console.log('route', route);
 
 const menuLeft = reactive([
   {
@@ -80,16 +81,13 @@ const menuRight = reactive([
 
 let header_class = ref("");
 let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20");
-let submenu_class = ref("");
 function handleScroll() {
   if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600) {
     header_class.value = "sticky top-0 bg-fuchsia-900/70 backdrop-blur-sm duration-150 drop-shadow-lg"
     top_header_bg_class.value = ""
-    submenu_class.value = "bg-fuchsia-900/50"
   } else {
     header_class.value = ""
     top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20"
-    submenu_class.value = ""
   }
 }
 window.addEventListener('scroll', handleScroll, {passive: true});
@@ -101,7 +99,7 @@ onBeforeUnmount(()=>{
 
 <template>
   <div class="max-w-full" :class="header_class" @scroll.passive="handleScroll">
-    <div v-if="route.path !== '/'" :class="top_header_bg_class"/>
+    <div v-if="route.name !== 'home'" :class="top_header_bg_class"/>
     <div class="relative max-w flex flex-row place-content-center items-center h-20 gap-5 text-white font-sans text-md/5 lg:text-lg/5 xl:text-xl/6 2xl:text-2xl/6 text-center">
       <div class="max-h-20 w-5/12">
         <div class="flex flex-row items-start float-right pt-2">
@@ -112,8 +110,7 @@ onBeforeUnmount(()=>{
             <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false">
               <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
               <div
-                class="bg-fuchsia-900/10 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
-                :class="submenu_class"
+                class="bg-fuchsia-900/40 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
               >
                 <div
                   v-for="subItem in menuItem.submenus" :key="subItem.hash"
@@ -124,8 +121,6 @@ onBeforeUnmount(()=>{
                   <RouterLink
                     :to="{name: subItem.name, hash: subItem.hash}"
                     class="app-menu-button"
-                    v-slot="{ navigate }"
-                    @click="navigate"
                   >
                     {{ subItem.title }}
                   </RouterLink>
@@ -151,8 +146,7 @@ onBeforeUnmount(()=>{
             <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false">
               <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
               <div
-                class="bg-fuchsia-900/10 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
-                :class="submenu_class"
+                class="bg-fuchsia-900/40 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
               >
                 <div
                   v-for="subItem in menuItem.submenus" :key="subItem.hash"
@@ -162,8 +156,6 @@ onBeforeUnmount(()=>{
                   <RouterLink
                     :to="{name: subItem.name, hash: subItem.hash}"
                     class="app-menu-button"
-                    v-slot="{ navigate }"
-                    @click="navigate"
                   >
                     {{ subItem.title }}
                   </RouterLink>

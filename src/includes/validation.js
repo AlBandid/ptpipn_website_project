@@ -26,8 +26,8 @@ export default {
         }
         return messages[ctx.rule.name] ? messages[ctx.rule.name] : 'Wprowadzono niepoprawne dane'
       },
-      validateOnBlur: true,
-      validateOnChange: true,
+      validateOnBlur: false,
+      validateOnChange: false,
       validateOnInput: false,
       validateOnModelUpdate: true
     })

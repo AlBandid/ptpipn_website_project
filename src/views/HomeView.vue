@@ -39,8 +39,11 @@ onBeforeMount(() => {
 <template>
   <main-header/>
   <div class="h-60 md:h-50 lg:h-40 xl:h-30"/>
-  <div class="text-2xl xs:text-xs mt-20 mx-10 lg:mx-50 flex flex-col gap-30">
-    <p class="text-center">Naszym celem jest podnoszenie jakości opieki nad noworodkiem i jego rodziną oraz propagowanie i rozwój pielęgniarstwa neonatologicznego na jak najwyższym poziomie.</p>
+  <div class="text-base lg:text-2xl mt-20 mx-10 lg:mx-50 flex flex-col gap-30">
+    <p class="text-center">
+      Naszym celem jest podnoszenie jakości opieki nad noworodkiem i jego rodziną oraz propagowanie
+      i rozwój pielęgniarstwa neonatologicznego na jak najwyższym poziomie.
+    </p>
     <div class="flex flex-col place-items-center gap-10">
       <p class="text-2xl text-fuchsia-950 font-bold">SPRAWDŹ NASZE AKTUALNOŚCI</p>
       <div class="flex flex-col lg:flex-row gap-10 text-md lg:text-2xl mx-10 lg:mx-50 place-items-center md:place-content-center">

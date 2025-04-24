@@ -72,41 +72,22 @@ async function sendForm(values) {
 <!--        Title -->
         <div class="mb-3">
           <label class="inline-block mb-2">Temat:</label>
-          <vee-field
-            type="text"
-            name="title"
-            class="block w-full py-1.5 px-3 text-gray-800 border-gray-300 border-2 transition duration-500 focus:outline-none focus:border-black rounded"
-            placeholder="Podaj temat zapytania"
-          />
+          <vee-field type="text" name="title" class="app-form-field" placeholder="Podaj temat zapytania"/>
           <error-message class="text-red-500" name="title"/>
         </div>
 <!--        Contact -->
         <div class="mb-3">
           <label class="inline-block mb-2">Kontakt zwrotny:</label>
-          <vee-field
-            type="text"
-            name="contact"
-            class="block w-full py-1.5 px-3 text-gray-800 border-gray-300 border-2 transition duration-500 focus:outline-none focus:border-black rounded"
-            placeholder="Email lub telefon"
-          />
+          <vee-field type="text" name="contact" class="app-form-field" placeholder="Email lub telefon"/>
           <error-message class="text-red-500" name="contact"/>
         </div>
 <!--        Message -->
         <div class="mb-3">
           <label class="inline-block mb-2">Twoja wiadomość:</label>
-          <vee-field
-            as="textarea"
-            name="message"
-            class="block w-full py-1.5 px-3 text-gray-800 border-gray-300 border-2 transition duration-500 focus:outline-none focus:border-black rounded"
-            placeholder=""
-          />
+          <vee-field as="textarea" name="message" class="app-form-field" placeholder=""/>
           <error-message class="text-red-500" name="message"/>
         </div>
-        <button
-          type="submit"
-          class="block mx-auto w-1/3 py-1.5 bg-fuchsia-900 text-white rounded transition duration-500 hover:bg-fuchsia-700 cursor-pointer"
-          :disabled="form_in_submission"
-        >
+        <button type="submit" class="app-button mx-auto w-1/3" :disabled="form_in_submission">
           Wyślij
         </button>
       </vee-form>
