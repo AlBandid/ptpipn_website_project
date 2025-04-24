@@ -1,9 +1,7 @@
 <script setup>
-import {RouterLink, useRoute} from "vue-router";
-import { ref, onBeforeUnmount, reactive } from 'vue'
-
-let route = useRoute();
-console.log('route', route);
+import MobileHeader from '@/components/mobileHeader.vue'
+import WideScreenHeader from '@/components/wideScreenHeader.vue'
+import { computed, reactive } from 'vue'
 
 const menuLeft = reactive([
   {
@@ -79,93 +77,11 @@ const menuRight = reactive([
   }
 ])
 
-let header_class = ref("");
-let top_header_bg_class = ref("absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20");
-function handleScroll() {
-  if (document.body.scrollTop >= 600 || document.documentElement.scrollTop >= 600) {
-    header_class.value = "sticky top-0 bg-fuchsia-900/70 backdrop-blur-sm duration-150 drop-shadow-lg"
-    top_header_bg_class.value = ""
-  } else {
-    header_class.value = ""
-    top_header_bg_class.value = "absolute max-w-full w-full bg-fuchsia-900/70 -z-3 h-20"
-  }
-}
-window.addEventListener('scroll', handleScroll, {passive: true});
-
-onBeforeUnmount(()=>{
-  window.removeEventListener('scroll', handleScroll, {passive: true});
-})
+const fullMenu = computed(() => menuRight.concat(menuLeft))
 </script>
 
 <template>
-  <div class="max-w-full" :class="header_class" @scroll.passive="handleScroll">
-    <div v-if="route.name !== 'home'" :class="top_header_bg_class"/>
-    <div class="relative max-w flex flex-row place-content-center items-center h-20 gap-5 text-white font-sans text-md/5 lg:text-lg/5 xl:text-xl/6 2xl:text-2xl/6 text-center">
-      <div class="max-h-20 w-5/12">
-        <div class="flex flex-row items-start float-right pt-2">
-          <div
-            v-for="menuItem in menuLeft" :key="menuItem.name"
-            class="flex flex-col"
-          >
-            <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false">
-              <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
-              <div
-                class="bg-fuchsia-900/40 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
-              >
-                <div
-                  v-for="subItem in menuItem.submenus" :key="subItem.hash"
-                  v-show="menuItem.submenuVisible"
-                  class="flex flex-col w-full"
-                  @mouseover="menuItem.submenuVisible=true"
-                >
-                  <RouterLink
-                    :to="{name: subItem.name, hash: subItem.hash}"
-                    class="app-menu-button"
-                  >
-                    {{ subItem.title }}
-                  </RouterLink>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-2/12 min-w-10 w-16">
-        <div class="">
-          <RouterLink :to="{name: 'home'}">
-            <img src="/img/nowe_logo_ptpipn_biale.png" alt="PTPiPN logo" class=""/>
-          </RouterLink>
-        </div>
-      </div>
-      <div class="max-h-20 w-5/12">
-        <div class="flex flex-row items-start float-left pt-2">
-          <div
-            v-for="menuItem in menuRight" :key="menuItem.name"
-            class="flex flex-col"
-          >
-            <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false">
-              <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
-              <div
-                class="bg-fuchsia-900/40 rounded-b-4xl backdrop-blur-md drop-shadow-2xl mt-2"
-              >
-                <div
-                  v-for="subItem in menuItem.submenus" :key="subItem.hash"
-                  v-show="menuItem.submenuVisible"
-                  class="flex flex-col"
-                >
-                  <RouterLink
-                    :to="{name: subItem.name, hash: subItem.hash}"
-                    class="app-menu-button"
-                  >
-                    {{ subItem.title }}
-                  </RouterLink>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <mobile-header :fullMenu="fullMenu"/>
+  <wide-screen-header class="hidden lg:block" :menuLeft="menuLeft" :menuRight="menuRight"/>
 </template>
 
