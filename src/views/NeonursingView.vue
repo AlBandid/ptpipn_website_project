@@ -1,9 +1,12 @@
 <script>
+import { setupCollection } from '@/includes/firebase.js'
+import { onBeforeMount, ref } from 'vue'
+import { query, getDocs, limit } from 'firebase/firestore'
+
 export default {
   name: 'NeonursingView',
   setup() {
-    let rejestracja_otwarta = false;
-
+    let rejestracja_otwarta = ref(false);
     const programKonferencji = [
       {
         godzina: '9:00-9:15',
@@ -115,6 +118,15 @@ export default {
       },
     ]
 
+    onBeforeMount(async ()=>{
+      const setupRef = await getDocs(query(setupCollection, limit(1)))
+      let setupData = {}
+      setupRef.forEach((doc) => {
+        setupData = Object.assign(setupData, { ...doc.data(), docID: doc.id })
+      })
+      rejestracja_otwarta.value = setupData.isRejestracjaOpen
+    })
+
     return {
       rejestracja_otwarta,
       programKonferencji
@@ -124,27 +136,31 @@ export default {
 </script>
 
 <template>
-<div class="text-md lg:text-2xl place-items-center text-justify">
-  <div class="w-100 h-100 bg-[url(/img/neonursing_2024.jpg)] bg-contain bg-no-repeat"/>
-  <p>
-    Zapraszamy na coroczną Ogólnopolską Konferencję środowiska położnych i pielęgniarek
-    neonatologicznych "NEONURSING 2024", która odbędzie się 21 września 2024r. w hotelu Ambasador
-    Premium w Łodzi, ul. Jana Kilińskiego 145. Wzorem roku ubiegłego Konferencja odbędzie się
-    w formule stacjonarnej co pozwoli nam na lepszą wymianę doświadczeń nie tylko podczas obrad
-    na sali wykładowej ale także w kuluarach. Mamy nadzieję, że program Konferencji przygotowany
-    w oparciu o wypełnioną przez Państwa ankietę pokonferencyjną, spełni pokładane w nim oczekiwania.
-    Jeśli chcieliby Państwo wziąć czynny udział w Konferencji i zaprezentować własne doświadczenia
-    lub badania, prosimy o kontakt ( info@ptpipn.pl , tel. 531 406 069) – jesteśmy otwarte na Państwa propozycje.
-  </p>
-  <p>
-    W kwestiach organizacyjnych dotyczących Konferencji prosimy o kontakt z Centrum Doradczo-szkoleniowym
-    PROVENA Monika Rutkowska-Drozd, telefon: 695 271 227, e-mail: biuro@provena.com.pl <br>
-    W kwestiach merytorycznych prosimy o kontakt z Zarządem PTPiPN, telefon: info@ptpipn.pl
-  </p>
+<div>
+  <div class="app-section-block place-items-center text-justify">
+    <div class="w-100 h-100 bg-[url(/img/neonursing_2024.jpg)] bg-contain bg-no-repeat"/>
+    <p>
+      Zapraszamy na coroczną Ogólnopolską Konferencję środowiska położnych i pielęgniarek
+      neonatologicznych "NEONURSING 2024", która odbędzie się 21 września 2024r. w hotelu Ambasador
+      Premium w Łodzi, ul. Jana Kilińskiego 145. Wzorem roku ubiegłego Konferencja odbędzie się
+      w formule stacjonarnej co pozwoli nam na lepszą wymianę doświadczeń nie tylko podczas obrad
+      na sali wykładowej ale także w kuluarach. Mamy nadzieję, że program Konferencji przygotowany
+      w oparciu o wypełnioną przez Państwa ankietę pokonferencyjną, spełni pokładane w nim oczekiwania.
+      Jeśli chcieliby Państwo wziąć czynny udział w Konferencji i zaprezentować własne doświadczenia
+      lub badania, prosimy o kontakt ( info@ptpipn.pl , tel. 531 406 069) – jesteśmy otwarte na Państwa propozycje.
+    </p>
+    <p>
+      W kwestiach organizacyjnych dotyczących Konferencji prosimy o kontakt z Centrum Doradczo-szkoleniowym
+      PROVENA Monika Rutkowska-Drozd, telefon: 695 271 227, e-mail: biuro@provena.com.pl <br>
+      W kwestiach merytorycznych prosimy o kontakt z Zarządem PTPiPN, telefon: info@ptpipn.pl
+    </p>
+  </div>
   <section id="program-konferencji" class="app-section-block mt-10 place-items-center">
-    <button type="button" v-if="rejestracja_otwarta" class="p-2 bg-stone-50 border-2 border-stone-100 drop-shadow-lg drop-shadow-stone-200">REJESTRACJA</button>
+    <a v-if="rejestracja_otwarta" href="#" target="_blank" rel="noopener noreferrer">
+      <button type="button" class="app-button">REJESTRACJA</button>
+    </a>
     <p v-else class="text-red-800 font-bold">WSZYSTKIE MIEJSCA NA KONFERENCJĘ ZOSTAŁY WYPEŁNIONE</p>
-    <p class="text-3xl">PROGRAM KONFERENCJI</p>
+    <p class="app-section-title">PROGRAM KONFERENCJI</p>
     <div>
       <div
         class="flex flex-row w-full gap-x-10 bg-fuchsia-50 p-5 border-b-2 border-white"

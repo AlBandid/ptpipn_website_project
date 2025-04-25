@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div id="swiatowy-dzien-wczesniaka" class="app-section-block">
+  <section id="swiatowy-dzien-wczesniaka" class="app-section-block">
     <div class="app-section-title">
       <p>Światowy Dzień Wcześniaka</p>
     </div>
@@ -28,8 +28,8 @@
         To ważny dzień dla naszych podopiecznych i ich rodziców. Pokażmy jak ich wspieramy.
       </p>
     </div>
-  </div>
-  <div id="covid-19" class="app-section-block">
+  </section>
+  <section id="covid-19" class="app-section-block">
     <div class="app-section-title">
       <p>COVID-19</p>
     </div>
@@ -138,8 +138,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="materialy-szkoleniowe" class="app-section-block">
+  </section>
+  <section id="materialy-szkoleniowe" class="app-section-block">
     <div class="app-section-title">
       <p>Materiały szkoleniowe do pobrania:</p>
     </div>
@@ -152,8 +152,8 @@
         Utrzymanie prawidłowej temperatury ciała noworodka
       </a>
     </div>
-  </div>
-  <div id="przydatne-linki" class="app-section-block">
+  </section>
+  <section id="przydatne-linki" class="app-section-block">
     <div class="app-section-title">
       <p>Przydatne linki:</p>
     </div>
@@ -208,6 +208,6 @@
         Polskie Centrum Edukacji
       </a>
     </div>
-  </div>
+  </section>
 </div>
 </template>

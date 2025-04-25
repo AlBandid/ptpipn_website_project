@@ -10,15 +10,13 @@ export default {
 </script>
 
 <template>
-  <div class="max-w sticky top-0 bg-fuchsia-900/50 backdrop-blur-md duration-150 drop-shadow-lg shadow-fuchsia-900">
+  <div class="max-w sticky top-0 z-2 bg-fuchsia-900/50 backdrop-blur-md duration-150 drop-shadow-lg shadow-fuchsia-900">
     <div class="flex flex-row place-content-center items-stretch mx-auto h-full gap-5 text-white font-sans text-center line-clamp-1">
       <div class="h-full w-5/12">
         <div class="flex flex-row float-right justify-evenly">
           <div v-for="menuItem in menuLeft" :key="menuItem.name" class="flex flex-col min-w-max">
             <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false" class="min-w-12/12">
-              <div class="app-menu-button">
-                <RouterLink :to="{name: menuItem.name}">{{ menuItem.title }}</RouterLink>
-              </div>
+              <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
               <div
                 class="absolute bg-fuchsia-100/95 drop-shadow-2xl shadow-fuchsia-900 rounded-b-md text-gray-800 w-3/24"
               >
@@ -54,9 +52,7 @@ export default {
             class="flex flex-col"
           >
             <div @mouseenter="menuItem.submenuVisible=true" @mouseleave="menuItem.submenuVisible=false">
-              <div class="app-menu-button">
-                <RouterLink :to="{name: menuItem.name}">{{ menuItem.title }}</RouterLink>
-              </div>
+              <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
               <div
                 class="absolute bg-fuchsia-100/95 drop-shadow-2xl shadow-fuchsia-900 rounded-b-md text-gray-800"
               >

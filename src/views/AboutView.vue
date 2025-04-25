@@ -1,5 +1,5 @@
 <template>
-<div class="">
+<div>
   <div class="app-section-block">
     <div class="mx-auto max-w-10/12 w-150 h-25 md:h-35 lg:h-45 xl:h-55 2xl:h-65 bg-[url(/img/identyfikator_ptpipn.png)] bg-contain bg-no-repeat"/>
     <p>
@@ -15,7 +15,7 @@
       Zapraszamy wszystkie chętne pielęgniarki/położne neonatologiczne do współpracy z nami o kontakt drogą mailową. W zakładce Sprawy członkowskie znajdziecie państwo deklarację członkowską, którą po wypełnieniu i podpisaniu można przesłać do nas pocztą na adres ICZMP, lub drogą elektroniczną po zeskanowaniu wypełnionego i podpisanego dokumentu.
     </p>
   </div>
-  <div id="struktura" class="app-section-block place-items-center place-content-center">
+  <section id="struktura" class="app-section-block place-items-center place-content-center">
     <div class="app-section-title mb-5">
       <p>Struktura PTPiPN</p>
     </div>
@@ -58,7 +58,7 @@
         <p>Agnieszka Piątkowska</p>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 </template>
 

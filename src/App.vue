@@ -15,8 +15,23 @@ export default {
 
 <template>
   <div>
-    <app-header class="z-1"/>
-    <RouterView class="mb-20 h-auto min-h-[68.5vh] app-view-content" />
+    <app-header/>
+<!--    <transition name="fade" mode="out-in">-->
+      <RouterView class="mb-20 -z-2 h-auto min-h-[68.5vh] app-view-content"/>
+<!--    </transition>-->
     <app-footer/>
   </div>
 </template>
+
+<style>
+.fade-enter-from{
+  opacity: 0;
+}
+.fade-enter-active{
+  transition: all 0.5s linear;
+}
+.fade-leave-to{
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+</style>

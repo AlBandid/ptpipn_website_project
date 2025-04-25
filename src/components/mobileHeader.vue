@@ -26,7 +26,7 @@ export default {
       class="flex sticky top-0 z-2 items-center justify-between p-4 lg:hidden bg-fuchsia-900/50 backdrop-blur-md drop-shadow-2xl max-h-15"
     >
       <div class="w-1/6">
-        <button @click="toggleSidebar" class="text-white focus:outline-none focus:text-fuchsia-300">
+        <button @click="toggleSidebar" class="text-white focus:outline-none focus:text-fuchsia-300 cursor-pointer">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
@@ -57,7 +57,7 @@ export default {
       :class="['fixed top-0 left-0 w-full sm:w-2/3 md:w-1/3 h-full bg-fuchsia-100 drop-shadow-2xl shadow-fuchsia-900 transform transition-transform duration-300 z-50 lg:hidden', isSidebarOpen ? 'translate-x-0' : '-translate-x-full']"
     >
       <div class="p-4">
-        <button @click="toggleSidebar" class="mb-4 text-gray-800 focus:text-fuchsia-900">✕</button>
+        <button @click="toggleSidebar" class="mb-4 text-gray-800 focus:text-fuchsia-900 cursor-pointer">✕</button>
         <!-- Navigation Items -->
         <div class="flex flex-col-reverse gap-10">
           <div v-for="menuItem in fullMenu" :key="menuItem.name" class="w-full">

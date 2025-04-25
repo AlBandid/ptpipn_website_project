@@ -29,5 +29,5 @@ initializeFirestore(app, {
 })
 const db = getFirestore(app)
 const postsCollection = collection(db, "posts");
-
-export { db, postsCollection };
+const setupCollection = collection(db, "setup");
+export { db, postsCollection, setupCollection };

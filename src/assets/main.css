@@ -96,10 +96,21 @@
   background-color: var(--color-fuchsia-700);
 }
 
+.app-gallery-image {
+  width: calc(var(--spacing) * 80);
+  height: calc(var(--spacing) * 40);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
 /* lg */
 @media (width >= 64rem) {
   .app-view-content {
-    margin-inline: calc(var(--spacing) * 50);
+    margin-inline: calc(var(--spacing) * 20);
     font-size: var(--text-xl);
     line-height: var(--text-xl--line-height);
   }
@@ -124,6 +135,11 @@
     font-size: var(--text-4xl); /* 2.25rem (36px) */
     line-height: var(--text-4xl--line-height); /* calc(2.5 / 2.25) */
   }
+
+  .app-gallery-image {
+    width: calc(var(--spacing) * 60);
+    height: calc(var(--spacing) * 30);
+  }
 }
 
 /* xl */
@@ -135,5 +151,15 @@
   .app-submenu-button {
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
+  }
+  .app-view-content {
+    margin-inline: calc(var(--spacing) * 30);
+  }
+}
+
+/* 2xl */
+@media (width >= 96rem) {
+  .app-view-content {
+    margin-inline: calc(var(--spacing) * 50);
   }
 }

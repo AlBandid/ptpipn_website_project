@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-<div class="p-10 border-stone-50 bg-stone-50 border-2 rounded-2xl drop-shadow-md drop-shadow-stone-200">
+<div class="p-10 border-fuchsia-50 bg-white border-2 rounded-2xl drop-shadow-md">
   <router-link class="font-bold" :to="{name: 'post', params: {idPosta: post.url_ending}}">
     {{post.postTitle}}
   </router-link>
