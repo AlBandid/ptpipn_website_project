@@ -17,109 +17,145 @@ const logos = [
     index: 0,
     filename: '00_NeoMedica.png',
     link: 'http://neomedica.waw.pl',
-    decoration: 'border-fuchsia-700'
+    decoration: 'border-fuchsia-700',
+    text_decoration: 'border-fuchsia-700 bg-fuchsia-700 text-white',
+    text: 'Patronat Merytoryczny'
   },
   {
     index: 1,
     filename: '01_Nutricia-logo-strapline-rgb-grad.jpg',
     link: 'https://akademianutricia.pl',
-    decoration: 'border-yellow-600'
+    decoration: 'border-yellow-600',
+    text_decoration: 'border-yellow-600 bg-yellow-600 text-white',
+    text: 'Partner Złoty'
   },
   {
     index: 2,
     filename: '02_Bebilon_w_tarczy-1.png',
     link: 'https://www.bebiprogram.pl',
-    decoration: 'border-yellow-600'
+    decoration: 'border-yellow-600',
+    text_decoration: 'border-yellow-600 bg-yellow-600 text-white',
+    text: 'Partner Złoty'
   },
   {
     index: 3,
     filename: '03_bebiko.jpg',
     link: 'https://www.bebiklub.pl',
-    decoration: 'border-yellow-600'
+    decoration: 'border-yellow-600',
+    text_decoration: 'border-yellow-600 bg-yellow-600 text-white',
+    text: 'Partner Złoty'
   },
   {
     index: 4,
     filename: '04_Humana.jpg',
     link: 'https://www.humana-baby.pl',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 5,
     filename: '05_medela.jpg',
     link: 'https://www.medela.com/pl-pl/odciaganie-pokarmu-z-piersi',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 6,
     filename: '06_Logo_Bepanthen_Baby_RGB.png',
     link: 'https://www.bepanthen.pl',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 7,
     filename: '07_neno_2024.jpg',
     link: 'https://neno.pl',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 8,
     filename: '08_Drager_logo_2023.jpg',
     link: 'https://www.draeger.com/pl_pl/Hospital/Neonatal-Care',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 9,
     filename: '09_Dutchmed.gif',
     link: 'http://www.dutchmed.pl',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 10,
     filename: '10_FPHcare-logo.svg.png',
     link: 'https://www.fphcare.com/en-gb/',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 11,
     filename: '11_bd.png',
     link: 'https://www.bd.com/pl-pl',
-    decoration: 'border-slate-400'
+    decoration: 'border-slate-400',
+    text_decoration: 'border-slate-400 bg-slate-400 text-white',
+    text: 'Partner Srebrny'
   },
   {
     index: 12,
     filename: '12_LOGO NUK MEDICPRO duże 2024.jpg',
     link: 'https://www.nuk.pl/pl_pl/o-marce-nuk/nuk-medicpro',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   },
   {
     index: 13,
     filename: '13_Kroban - logo.png',
     link: 'https://www.kroban.pl',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   },
   {
     index: 14,
     filename: '14_logo_neOplus.jpg',
     link: 'https://neoplus.com.pl',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   },
   {
     index: 15,
     filename: '15_Seca.jpg',
     link: 'https://www.seca.com/pl_pl.html',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   },
   {
     index: 16,
     filename: '16_logo ge.jpg',
     link: 'https://www.gehealthcare.pl',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   },
   {
     index: 17,
     filename: '17_baxter.png',
     link: 'https://www.baxter.com.pl/pl',
-    decoration: 'border-white'
+    decoration: 'border-white',
+    text_decoration: 'border-white bg-white text-slate-900',
+    text: 'Partner'
   }
 ]
 
@@ -198,22 +234,25 @@ onBeforeMount(async() => {
             :modules="modules"
             :slides-per-view="1"
             :space-between="5"
-            :breakpoints="{ 768: { slidesPerView: 4 } }"
+            :breakpoints="{ 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }"
             :autoplay="{ delay: 2000, disableOnInteraction: false }"
             grab-cursor
             loop
             class="w-full"
           >
             <SwiperSlide v-for="logo in logos" :key="logo.index">
-              <div class="w-full h-50 md:h-30 flex items-center justify-center bg-white my-4" >
+              <div class="relative w-full h-50 flex items-center justify-center bg-white my-4" >
                 <a
                   :href="logo.link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full h-50 md:h-30 flex items-center justify-center bg-white border-3 drop-shadow-lg rounded-2xl p-4 m-4"
+                  class="w-full h-full flex flex-col content-start justify-center bg-white border-3 drop-shadow-lg rounded-2xl pb-4 m-4"
                   :class="logo.decoration"
                 >
-                  <img :src="`/img/partners_logo/${logo.filename}`" class="max-h-full max-w-full object-contain" />
+                  <img :src="`/img/partners_logo/${logo.filename}`" class="max-h-30 max-w-full object-contain p-4 m-4" />
+                  <p class="absolute bottom-0 w-full self-center text-sm text-center p-2 border-2 rounded-b-xl" :class="logo.text_decoration">
+                    {{logo.text.toUpperCase()}}
+                  </p>
                 </a>
               </div>
             </SwiperSlide>
