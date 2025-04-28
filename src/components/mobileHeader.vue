@@ -61,10 +61,15 @@ export default {
         <!-- Navigation Items -->
         <div class="flex flex-col-reverse gap-10">
           <div v-for="menuItem in fullMenu" :key="menuItem.name" class="w-full">
-            <RouterLink :to="{name: menuItem.name}" class="app-menu-button">{{ menuItem.title }}</RouterLink>
+            <RouterLink :to="{name: menuItem.name}" @click="toggleSidebar" class="app-menu-button">
+              {{ menuItem.title }}
+            </RouterLink>
             <div v-if="menuItem.submenus.length>0" class="flex flex-col gap-6 ml-5 mt-6 w-full">
               <div v-for="subItem in menuItem.submenus" :key="subItem.hash">
-                <RouterLink :to="{name: subItem.name, hash: subItem.hash}" class="app-submenu-button w-full">{{ subItem.title }}</RouterLink>
+                <RouterLink :to="{name: subItem.name, hash: subItem.hash}"
+                            @click="toggleSidebar" class="app-submenu-button w-full">
+                  {{ subItem.title }}
+                </RouterLink>
               </div>
             </div>
           </div>

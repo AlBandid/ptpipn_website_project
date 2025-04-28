@@ -17,7 +17,7 @@ export default {
   <div>
     <app-header/>
 <!--    <transition name="fade" mode="out-in">-->
-      <RouterView class="mb-20 -z-2 h-auto min-h-[68.5vh] app-view-content"/>
+      <RouterView class="mb-20 -z-2 h-auto min-h-screen app-view-content"/>
 <!--    </transition>-->
     <app-footer/>
   </div>

@@ -3,9 +3,9 @@ import {reactive, ref} from "vue";
 import {ErrorMessage} from "vee-validate";
 
 const schema = reactive({
-  title: 'required|min:5|max:50',
+  title: 'required|min:5|max:50|alphaNum',
   contact: 'required|min:5|max:50|isEmailOrNumber',
-  message: 'required|min:10|max:250'
+  message: 'required|min:10|max:250|atLeast3Letters'
 })
 
 let form_in_submission = ref(false)
