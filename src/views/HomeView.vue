@@ -4,6 +4,7 @@ import AktualnosciItem from "@/components/AktualnosciItem.vue";
 import {onBeforeMount, reactive, ref} from "vue";
 import {getDocs, limit, orderBy, query} from "firebase/firestore";
 import {postsCollection} from "@/includes/firebase.js";
+import { setupCollection } from '@/includes/firebase.js'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,9 +12,6 @@ import 'swiper/css/pagination'
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 const modules = [Navigation, Pagination, Autoplay];
-
-//const logoModules = import.meta.glob('/public/img/partners_logo/*.{png,jpg,jpeg,svg,gif}', { eager: true });
-//const logos = Object.values(logoModules).map(mod => mod.default);
 const logos = [
   {
     index: 0,
@@ -127,6 +125,8 @@ const logos = [
 
 const posty = reactive([])
 const pendingRequest = ref(false)
+let kartka_wielkanoc = ref(false)
+let kartka_boze_narodzenie = ref(false)
 
 async function requestTop3Posts() {
   if(pendingRequest.value){
@@ -139,7 +139,7 @@ async function requestTop3Posts() {
   let postsSnapshot = await getDocs(
     query(
       postsCollection,
-      orderBy('postTitle','desc'),
+      orderBy('creationTime','desc'),
       limit(3)
     )
   )
@@ -150,24 +150,41 @@ async function requestTop3Posts() {
   pendingRequest.value = false;
 }
 
-onBeforeMount(() => {
-  requestTop3Posts()
+onBeforeMount(async() => {
+  await requestTop3Posts()
+  const setupRef = await getDocs(query(setupCollection, limit(1)))
+  let setupData = {}
+  setupRef.forEach((doc) => {
+    setupData = Object.assign(setupData, { ...doc.data(), docID: doc.id })
+  })
+  kartka_wielkanoc.value = setupData.isWielkanoc || false
+  kartka_boze_narodzenie.value = setupData.isBozeNarodzenie || false
 })
 
 </script>
 
 <template>
   <main-header/>
-  <div class="mt-30 sm:mt-40 flex flex-col gap-30">
+  <div class="mt-30 sm:mt-40 lg:mt-45 flex flex-col gap-30">
     <div class="app-section-block">
       <p class="text-center text-base lg:text-2xl px-10 md:px-20 xl:px-30 mx-auto italic">
         "Naszym celem jest podnoszenie jakości opieki nad noworodkiem i jego rodziną oraz propagowanie
         i rozwój pielęgniarstwa neonatologicznego na jak najwyższym poziomie."
       </p>
     </div>
+    <div v-if="kartka_wielkanoc" class="app-section-block">
+      <div class="flex justify-center mx-10 lg:mx-50 bg-white drop-shadow-xl">
+        <img src="/img/wielkanoc_PTPiPN.jpg" class="max-h-full max-w-full object-contain"/>
+      </div>
+    </div>
+    <div v-if="kartka_boze_narodzenie" class="app-section-block">
+      <div class="flex justify-center mx-10 lg:mx-50 bg-white drop-shadow-xl">
+        <img src="/img/boze_narodzenie_PTPiPN.jpg" class="max-h-full max-w-full object-contain"/>
+      </div>
+    </div>
     <div class="app-section-block place-items-center">
       <p class="text-2xl text-fuchsia-950 font-bold text-center">SPRAWDŹ NASZE AKTUALNOŚCI</p>
-      <div class="flex flex-col lg:flex-row gap-10 text-md lg:text-2xl mt-5 mx-10 lg:mx-50 place-items-center md:place-content-center">
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-10 mt-5 mx-10 lg:mx-50">
         <div v-for="post in posty" :key="post.docID">
           <aktualnosci-item :post="post"/>
         </div>

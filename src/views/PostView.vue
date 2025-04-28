@@ -6,22 +6,25 @@ import { getDocs, query, where, limit } from "firebase/firestore";
 export default {
   name: "PostView",
   props: {
-    idPosta: String,
+    urlPosta: String,
     documentID: String,
   },
   data() {
     return {
-      post: {},
+      post: {
+        url_ending: ''
+      },
     }
   },
   computed: {
     trescPosta() {
-      return defineAsyncComponent(() => import(`../aktualnosci_posts/tresc_${this.$route.params.idPosta}.vue`))
+      console.log(this.post)
+      return defineAsyncComponent(() => import(`../aktualnosci_posts/tresc_${this.$route.params.urlPosta}.vue`))
     }
   },
-  async created() {
-    const postsSnapshot = await getDocs(query(postsCollection, where('url_ending', '==', this.$route.params.idPosta), limit(1)))
-
+  async beforeMount() {
+    const postsSnapshot = await getDocs(query(postsCollection, where('url_ending', '==', this.$route.params.urlPosta), limit(1)))
+    console.log(postsSnapshot)
     if(postsSnapshot.size === 0){
       this.$router.push({name: 'home'})
       return
@@ -29,6 +32,7 @@ export default {
 
     postsSnapshot.forEach((doc) => {
       this.post = Object.assign(this.post, { ...doc.data(), docID: doc.id })
+      console.log(this.post)
     })
   }
 }
@@ -41,6 +45,15 @@ export default {
   <div class="app-section-block">
     <div class="app-section-title">
       <p>{{post.postTitle}}</p>
+      <p class="italic text-base">
+        {{post.creationDate.toDate().toLocaleString('pl-PL', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',})
+        }}
+      </p>
     </div>
     <div class="text-lg lg:text-xl text-justify">
       <component :is="trescPosta"></component>

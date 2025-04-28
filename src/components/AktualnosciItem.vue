@@ -23,10 +23,18 @@ export default {
 
 <template>
 <div class="p-10 border-fuchsia-50 bg-white border-2 rounded-2xl drop-shadow-md">
-  <router-link class="font-bold" :to="{name: 'post', params: {idPosta: post.url_ending}}">
+  <router-link class="font-bold app-link line-clamp-1" :to="{name: 'post', params: {urlPosta: post.url_ending}}">
     {{post.postTitle}}
   </router-link>
-  <p class="italic text-base">13.05.2021</p>
+  <p class="italic text-base">
+    {{post.creationDate.toDate().toLocaleString('pl-PL', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',})
+    }}
+  </p>
   <div class="line-clamp-3">
     <component :is="trescPosta"></component>
   </div>

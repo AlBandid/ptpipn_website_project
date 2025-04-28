@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="absolute w-full h-100 xs:h-120 sm:h-130 md:h-140 xl:h-160 -mt-40 -z-2 bg-[url(/img/istockphoto-817147694-612x612.jpg)] bg-cover bg-center"/>
-    <div class="absolute w-full h-100 xs:h-120 sm:h-130 md:h-140 xl:h-160 -mt-40 -z-1 bg-black/30 backdrop-blur-sm"/>
+    <div class="absolute w-full h-100 sm:h-110 md:h-120 xl:h-140 -mt-40 -z-2 bg-[url(/img/main-index.jpg)] bg-cover bg-center"/>
+    <div class="absolute w-full h-100 sm:h-110 md:h-120 xl:h-140 -mt-40 -z-1 bg-black/30 backdrop-blur-xs"/>
   </div>
-  <div class="flex-row place-content-center justify-items-center max-w-10/12 mx-auto mt-10 text-white text-lg/3 xs:text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold">
-    <p class="m-6">Polskie Towarzystwo</p>
-    <p class="m-6">Pielęgniarek i Położnych</p>
-    <p class="m-6">Neonatologicznych</p>
+  <div class="flex-row place-content-center justify-items-center mx-10 lg:mx-50 mt-10 text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold">
+    <p class="text-center p-2">Polskie Towarzystwo</p>
+    <p class="text-center p-2">Pielęgniarek i Położnych</p>
+    <p class="text-center p-2">Neonatologicznych</p>
   </div>
 </template>

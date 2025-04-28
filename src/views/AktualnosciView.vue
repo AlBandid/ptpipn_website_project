@@ -27,7 +27,7 @@ export default {
         postsSnapshot = await getDocs(
           query(
             postsCollection,
-            orderBy('postTitle','desc'),
+            orderBy('creationTime','desc'),
             startAfter(lastPost),
             limit(scroll_interval.value)
           )
@@ -36,7 +36,7 @@ export default {
         postsSnapshot = await getDocs(
           query(
             postsCollection,
-            orderBy('postTitle','desc'),
+            orderBy('creationTime','desc'),
             limit(scroll_interval.value)
           )
         )
@@ -77,7 +77,7 @@ export default {
 <div>
   <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-10">
     <div v-for="post in posty" :key="post.docID">
-      <aktualnosci-item :post="post" :id="`post-id-${post.docID}`"/>
+      <aktualnosci-item :post="post" :id="`post-id-${post.docID}`" class="w-full h-full"/>
     </div>
   </div>
 </div>
