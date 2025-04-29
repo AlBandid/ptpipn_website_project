@@ -11,12 +11,7 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC4EiIn0skkhgd_iNNdALVe5rbahIDBKSc",
-  authDomain: "ptpipn-strona-test.firebaseapp.com",
-  projectId: "ptpipn-strona-test",
-  storageBucket: "ptpipn-strona-test.firebasestorage.app",
-  messagingSenderId: "953750345540",
-  appId: "1:953750345540:web:306f10fd9852dec62ae911"
+  //my config
 };
 
 // Initialize Firebase
