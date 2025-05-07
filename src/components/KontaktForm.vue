@@ -3,7 +3,7 @@ import {reactive, ref} from "vue";
 import {ErrorMessage} from "vee-validate";
 
 const schema = reactive({
-  title: 'required|min:5|max:50|alphaNum',
+  title: 'required|min:5|max:50|atLeast3Letters',
   contact: 'required|min:5|max:50|isEmailOrNumber',
   message: 'required|min:10|max:250|atLeast3Letters'
 })

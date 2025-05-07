@@ -27,9 +27,9 @@ const menuLeft = reactive([
         hash: '#swiatowy-dzien-wczesniaka'
       },
       {
-        title: 'COVID-19',
+        title: 'Przydatne linki',
         name: 'bankWiedzy',
-        hash: '#covid-19'
+        hash: '#przydatne-linki'
       },
       {
         title: 'Materiały szkoleniowe',
@@ -37,9 +37,9 @@ const menuLeft = reactive([
         hash: '#materialy-szkoleniowe'
       },
       {
-        title: 'Przydatne linki',
+        title: 'COVID-19',
         name: 'bankWiedzy',
-        hash: '#przydatne-linki'
+        hash: '#covid-19'
       }
     ]
   },

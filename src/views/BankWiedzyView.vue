@@ -29,6 +29,83 @@
       </p>
     </div>
   </section>
+  <section id="przydatne-linki" class="app-section-block">
+    <div class="app-section-title">
+      <p>Przydatne linki:</p>
+    </div>
+    <div class="flex flex-col">
+      <a
+        href="https://www.coinnurses.org"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Międzynarodowe Stowarzyszenie Pielęgniarek Neonatologicznych
+      </a>
+      <a
+        href="https://neonatologia.edu.pl"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Polskie Towarzystwo Neonatologiczne
+      </a>
+      <a
+        href="https://nipip.pl"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Naczelna Izba Pielęgniarek i Położnych
+      </a>
+      <a
+        href="https://www.gov.pl/web/zdrowie"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Ministerstwo Zdrowia
+      </a>
+      <a
+        href="https://www.ptp.net.pl"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Polskie Towarzystwo Pielęgniarskie
+      </a>
+      <a
+        href="https://ckppip.edu.pl"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Centrum Kształcenia Podyplomowego Pielęgniarek i Położnych
+      </a>
+      <a
+        href="https://pce.com.pl"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Polskie Centrum Edukacji
+      </a>
+      <a
+        href="https://cnol.kobiety.med.pl/pl/nasze-kursy/"
+        target="_blank" rel="noopener noreferrer"
+        class="app-link"
+      >
+        Centrum Nauki o Laktacji im. ANNY OSLISLO
+      </a>
+    </div>
+  </section>
+  <section id="materialy-szkoleniowe" class="app-section-block">
+    <div class="app-section-title">
+      <p>Materiały szkoleniowe do pobrania:</p>
+    </div>
+    <div class="flex flex-col">
+      <a
+        href="@/docs/Termoregulacja.pdf"
+        download="Utrzymanie_prawidlowej_temperatury_ciala_noworodka"
+        class="app-link"
+      >
+        Utrzymanie prawidłowej temperatury ciała noworodka
+      </a>
+    </div>
+  </section>
   <section id="covid-19" class="app-section-block">
     <div class="app-section-title">
       <p>COVID-19</p>
@@ -139,75 +216,7 @@
       </div>
     </div>
   </section>
-  <section id="materialy-szkoleniowe" class="app-section-block">
-    <div class="app-section-title">
-      <p>Materiały szkoleniowe do pobrania:</p>
-    </div>
-    <div class="flex flex-col">
-      <a
-        href="@/docs/Termoregulacja.pdf"
-        download="Utrzymanie_prawidlowej_temperatury_ciala_noworodka"
-        class="app-link"
-      >
-        Utrzymanie prawidłowej temperatury ciała noworodka
-      </a>
-    </div>
-  </section>
-  <section id="przydatne-linki" class="app-section-block">
-    <div class="app-section-title">
-      <p>Przydatne linki:</p>
-    </div>
-    <div class="flex flex-col">
-      <a
-        href="https://www.coinnurses.org"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Międzynarodowe Stowarzyszenie Pielęgniarek Neonatologicznych
-      </a>
-      <a
-        href="https://neonatologia.edu.pl"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Polskie Towarzystwo Neonatologiczne
-      </a>
-      <a
-        href="https://nipip.pl"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Naczelna Izba Pielęgniarek i Położnych
-      </a>
-      <a
-        href="https://www.gov.pl/web/zdrowie"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Ministerstwo Zdrowia
-      </a>
-      <a
-        href="https://www.ptp.net.pl"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Polskie Towarzystwo Pielęgniarskie
-      </a>
-      <a
-        href="https://ckppip.edu.pl"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Centrum Kształcenia Podyplomowego Pielęgniarek i Położnych
-      </a>
-      <a
-        href="https://pce.com.pl"
-        target="_blank" rel="noopener noreferrer"
-        class="app-link"
-      >
-        Polskie Centrum Edukacji
-      </a>
-    </div>
-  </section>
 </div>
 </template>
+<script setup lang="ts">
+</script>
