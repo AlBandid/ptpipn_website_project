@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+p {
+  margin: 0.5rem;
+}
+a {
+  margin: 0.5rem;
+}
+
 .app-view-content {
 /*  flex flex-col gap-10 mt-20 mx-10 lg:mx-50 */
   display: flex;

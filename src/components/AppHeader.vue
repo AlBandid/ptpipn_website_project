@@ -5,14 +5,24 @@ import { computed, reactive } from 'vue'
 
 const menuLeft = reactive([
   {
-    title: 'Neonursing 2024',
-    name: 'neonursing',
+    title: 'Konferencje',
+    name: 'konferencje',
     submenuVisible: false,
     submenus: [
       {
-        title: 'Program Konferencji',
-        name: 'neonursing',
-        hash: '#program-konferencji'
+        title: 'Neonursing 2025',
+        name: 'konferencje',
+        hash: '#neonursing'
+      },
+      {
+        title: 'Interprofesjonalna opieka nad kobietą i noworodkiem',
+        name: 'konferencje',
+        hash: '#interprofesjonalna-opieka-nad-kobieta-i-noworodkiem'
+      },
+      {
+        title: 'Śląska Szkoła Neonatologii',
+        name: 'konferencje',
+        hash: '#slaska-szkola-neonatologii'
       }
     ]
   },

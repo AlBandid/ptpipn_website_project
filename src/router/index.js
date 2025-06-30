@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import AktualnosciView from "@/views/AktualnosciView.vue";
 import PostView from "@/views/PostView.vue";
-import NeonursingView from "@/views/NeonursingView.vue";
+import KonferencjeView from "@/views/KonferencjeView.vue";
 import SprCzlView from "@/views/SprCzlView.vue";
 import KontaktView from "@/views/KontaktView.vue";
 import BankWiedzyView from '@/views/BankWiedzyView.vue'
@@ -31,9 +31,9 @@ const routes = [
     props: true
   },
   {
-    path: '/neonursing',
-    name: 'neonursing',
-    component: NeonursingView,
+    path: '/konferencje',
+    name: 'konferencje',
+    component: KonferencjeView,
   },
   {
     path: '/sprawy-czlonkowskie',
