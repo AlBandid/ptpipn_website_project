@@ -28,7 +28,7 @@ async function sendForm(values) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "aleksandrakoziol77@gmail.com",
+        to: "info@ptpipn.pl",
         subject: `[ZAPYTANIE] ${values.title}`,
         message: `Witaj,\nOtrzymałeś nowe zapytanie ze strony PTPiPN:\n\n${values.message}\n\nKontakt zwrotny: ${values.contact}`,
       }),

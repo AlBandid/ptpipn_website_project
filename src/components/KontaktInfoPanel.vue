@@ -12,9 +12,9 @@
         <b>Adres siedziby:</b> <br>
         Instytut Centrum Zdrowia Matki - Polki <br>
         ul. Rzgowska 281/289 <br>
-        93 - 338 Łódź <br>
-        tel.: 531 406 069 <br>
-        e-mail: info@ptpipn.pl <br>
+        93-338 Łódź <br>
+        tel.: +48 531 406 069 <br>
+        e-mail: <a class="app-link" href="mailto:info@ptpipn.pl">info@ptpipn.pl</a> <br>
       </p>
     </div>
     <div>
