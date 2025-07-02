@@ -29,10 +29,10 @@
   </div>
   <div>
     <div class="app-section-title app-link">
-      <a href="@/docs/PTPiPN_Statut_2022.pdf" download="PTPiPN_Statut_2022">Statut PTPiPN</a>
+      <a href="/docs/PTPiPN_Statut_2022.pdf" target="_blank" rel="noopener noreferrer">Statut PTPiPN</a>
     </div>
     <div class="app-section-title app-link">
-      <a href="@/docs/deklaracja_czlonkowska.docx" download="deklaracja_czlonkowska">Deklaracja członkowska</a>
+      <a href="/docs/deklaracja_czlonkowska.docx" download="deklaracja_czlonkowska.docx">Deklaracja członkowska</a>
     </div>
   </div>
   <div>

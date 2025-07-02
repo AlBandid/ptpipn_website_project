@@ -98,8 +98,8 @@
     </div>
     <div class="flex flex-col">
       <a
-        href="@/docs/Termoregulacja.pdf"
-        download="Utrzymanie_prawidlowej_temperatury_ciala_noworodka"
+        href="/docs/Termoregulacja.pdf"
+        download="Utrzymanie_prawidlowej_temperatury_ciala_noworodka.pdf"
         class="app-link"
       >
         Utrzymanie prawidłowej temperatury ciała noworodka
@@ -153,62 +153,62 @@
         </p>
         <div class="flex flex-col">
           <a
-            href="@/docs/covid-19/Komunikat_KK_GIP_polozne_POZ_COVID-19.pdf"
-            download="Komunikat_KK_GIP_polozne_POZ_COVID-19" class="app-link"
+            href="/docs/covid-19/Komunikat_KK_GIP_polozne_POZ_COVID-19.pdf"
+            download="Komunikat_KK_GIP_polozne_POZ_COVID-19.pdf" class="app-link"
           >
             Komunikat KK GIP położne POZ COVID-19
           </a>
           <a
-            href="@/docs/covid-19/Komunikat_NRPiP_dla_pielegniarek_i_poloznych.pdf"
-            download="Komunikat_NRPiP_dla_pielegniarek_i_poloznych" class="app-link"
+            href="/docs/covid-19/Komunikat_NRPiP_dla_pielegniarek_i_poloznych.pdf"
+            download="Komunikat_NRPiP_dla_pielegniarek_i_poloznych.pdf" class="app-link"
           >
             Komunikat NRPiP dla pielęgniarek i położnych
           </a>
           <a
-            href="@/docs/covid-19/Minimalny_zestaw_srodkow_ochrony_indywidualnej.pdf"
-            download="Minimalny_zestaw_srodkow_ochrony_indywidualnej" class="app-link"
+            href="/docs/covid-19/Minimalny_zestaw_srodkow_ochrony_indywidualnej.pdf"
+            download="Minimalny_zestaw_srodkow_ochrony_indywidualnej.pdf" class="app-link"
           >
             Minimalny zestaw środków ochrony indywidualnej
           </a>
           <a
-            href="@/docs/covid-19/Opieka_domowa_COVID-19_zalecenia_WHO.pdf"
-            download="Opieka_domowa_COVID-19_zalecenia_WHO" class="app-link"
+            href="/docs/covid-19/Opieka_domowa_COVID-19_zalecenia_WHO.pdf"
+            download="Opieka_domowa_COVID-19_zalecenia_WHO.pdf" class="app-link"
           >
             Opieka domowa COVID-19 zalecenia WHO
           </a>
           <a
-            href="@/docs/covid-19/Podsumowanie_rekomendacji_CDC_i_The_Academy_of_Breastfeeding_Medicine.pdf"
-            download="Podsumowanie_rekomendacji_CDC_i_The_Academy_of_Breastfeeding_Medicine" class="app-link"
+            href="/docs/covid-19/Podsumowanie_rekomendacji_CDC_i_The_Academy_of_Breastfeeding_Medicine.pdf"
+            download="Podsumowanie_rekomendacji_CDC_i_The_Academy_of_Breastfeeding_Medicine.pdf" class="app-link"
           >
             Podsumowanie rekomendacji CDC i The Academy of Breastfeeding Medicine
           </a>
           <a
-            href="@/docs/covid-19/Postepowanie_przy_podejrzeniu_zakazenia_2019-nCoV_u_noworodka.pdf"
-            download="Postepowanie_przy_podejrzeniu_zakazenia_2019-nCoV_u_noworodka" class="app-link"
+            href="/docs/covid-19/Postepowanie_przy_podejrzeniu_zakazenia_2019-nCoV_u_noworodka.pdf"
+            download="Postepowanie_przy_podejrzeniu_zakazenia_2019-nCoV_u_noworodka.pdf" class="app-link"
           >
             Postępowanie przy podejrzeniu zakażenia 2019-nCoV u noworodka
           </a>
           <a
-            href="@/docs/covid-19/Postepowanie_z_ciezarna_i_noworodkiem_standardy_2020.pdf"
-            download="Postepowanie_z_ciezarna_i_noworodkiem_standardy_2020" class="app-link"
+            href="/docs/covid-19/Postepowanie_z_ciezarna_i_noworodkiem_standardy_2020.pdf"
+            download="Postepowanie_z_ciezarna_i_noworodkiem_standardy_2020.pdf" class="app-link"
           >
             Postępowanie z ciężarną i noworodkiem standardy 2020
           </a>
           <a
-            href="@/docs/covid-19/Schemat_dla_POZ.pdf"
-            download="Schemat_dla_POZ" class="app-link"
+            href="/docs/covid-19/Schemat_dla_POZ.pdf"
+            download="Schemat_dla_POZ.pdf" class="app-link"
           >
             Schemat dla POZ
           </a>
           <a
-            href="@/docs/covid-19/WHO_opieka_kwarantanna_domowa_COVID_19.pdf"
-            download="WHO_opieka_kwarantanna_domowa_COVID_19" class="app-link"
+            href="/docs/covid-19/WHO_opieka_kwarantanna_domowa_COVID_19.pdf"
+            download="WHO_opieka_kwarantanna_domowa_COVID_19.pdf" class="app-link"
           >
             WHO opieka kwarantanna domowa COVID_19
           </a>
           <a
-            href="@/docs/covid-19/Zalecenia_porod_COVID.pdf"
-            download="Zalecenia_porod_COVID" class="app-link"
+            href="/docs/covid-19/Zalecenia_porod_COVID.pdf"
+            download="Zalecenia_porod_COVID.pdf" class="app-link"
           >
             Zalecenia poród COVID
           </a>

@@ -135,11 +135,11 @@ export default {
         Klinika Neonatologii i Intensywnej Terapii Noworodków GSCZD w Katowicach <br> Polskie Towarzystwo Neonatologiczne
       </p>
       <p>
-        Strona Śląskiej Szkoły Neonatologii<br>
-        <a class="app-link" href="https://slaskaszkolaneonatologii2025.agora-konferencje.pl" target="_blank" rel="noopener noreferrer">
-          www.slaskaszkolaneonatologii2025.agora-konferencje.pl
-        </a>
+        Strona Śląskiej Szkoły Neonatologii
       </p>
+      <a class="app-link" href="https://slaskaszkolaneonatologii2025.agora-konferencje.pl" target="_blank" rel="noopener noreferrer">
+        www.slaskaszkolaneonatologii2025.agora-konferencje.pl
+      </a>
       <p class="font-bold">W ramach opłaty konferencyjnej 100 zł (brutto) zapewniamy</p>
       <ol class="list-decimal ms-8">
         <li>udział w sesjach konferencyjnych</li>
