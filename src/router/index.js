@@ -7,6 +7,7 @@ import KonferencjeView from "@/views/KonferencjeView.vue";
 import SprCzlView from "@/views/SprCzlView.vue";
 import KontaktView from "@/views/KontaktView.vue";
 import BankWiedzyView from '@/views/BankWiedzyView.vue'
+import WideoView from '@/views/WideoView.vue'
 
 const routes = [
   {
@@ -49,6 +50,11 @@ const routes = [
     path: '/bank-wiedzy',
     name: 'bankWiedzy',
     component: BankWiedzyView,
+  },
+  {
+    path: '/materialy-wideo',
+    name: 'materialyWideo',
+    component: WideoView,
   },
   {
     path: '/:catchAll(.*)*',

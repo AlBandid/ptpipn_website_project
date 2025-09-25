@@ -40,7 +40,7 @@ async function sendForm(values) {
     console.log(e)
     form_in_submission.value = false
     form_alert_variant.value = 'bg-red-500'
-    form_alert_msg.value = `Wystąpił błąd przy przesyłaniu zapytania. \n Spróbuj ponownie lub skontaktuj się z działem technicznym \n Błąd: ${e.message}`
+    form_alert_msg.value = `Wystąpił błąd przy przesyłaniu zapytania. \n Spróbuj ponownie lub skontaktuj się z działem technicznym`
     return
   }
 
