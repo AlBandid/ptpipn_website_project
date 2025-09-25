@@ -50,19 +50,27 @@ export default {
         </p>
       </div>
     </div>
-    <a v-if="rejestracja_otwarta" href="https://salonnaukowy.pl/rejestracja/" target="_blank" rel="noopener noreferrer">
-      <button type="button" class="app-button mt-5">REJESTRACJA</button>
-    </a>
-    <div v-else>
-      <p class="text-red-800 font-bold mt-5">Ze względu na wyczerpanie się miejsc na Konferencję NEONURSING 2025 rejestracja została zamknięta i utworzona jest lista rezerwowa.</p>
+    <div class="mt-2">
+      <div class="place-items-center">
+        <RouterLink :to="{name: 'materialyWideo'}" class="app-button mx-auto max-w-50 lg:max-w-100 text-center">MATERIAŁY WIDEO DLA UCZESTNIKÓW</RouterLink>
+      </div>
       <p>
-        Osoby zainteresowane udziałem proszone są o kontakt z organizatorem Centrum Doradczo-Szkoleniowe PROVENA poprzez wysłanie na adres mailowy <a href="mailto:biuro@provena.com.pl">biuro@provena.com.pl</a> informacji o <b>chęci udziału w Konferencji z podaniem swojego imienia i nazwiska, adresu e-mail, numeru telefonu komórkowego oraz miejsca pracy</b>.
-      </p>
-      <p>
-        15 lipca upływa ostateczny termin opłacenia udziału w Konferencji dla osób już zarejestrowanych.<br>
-        Po tym terminie organizator będzie się indywidualnie kontaktował z osobami z listy rezerwowej informując o możliwości udziału w Konferencji NEONURSING 2025.
+        Osoby zainteresowane dostępem do materiałów wideo proszone są o kontakt z organizatorem Centrum Doradczo-Szkoleniowe PROVENA <a href="mailto:biuro@provena.com.pl">biuro@provena.com.pl</a>
       </p>
     </div>
+<!--    <a v-if="rejestracja_otwarta" href="https://salonnaukowy.pl/rejestracja/" target="_blank" rel="noopener noreferrer">-->
+<!--      <button type="button" class="app-button mt-5">REJESTRACJA</button>-->
+<!--    </a>-->
+<!--    <div v-else>-->
+<!--      <p class="text-red-800 font-bold mt-5">Ze względu na wyczerpanie się miejsc na Konferencję NEONURSING 2025 rejestracja została zamknięta i utworzona jest lista rezerwowa.</p>-->
+<!--      <p>-->
+<!--        Osoby zainteresowane udziałem proszone są o kontakt z organizatorem Centrum Doradczo-Szkoleniowe PROVENA poprzez wysłanie na adres mailowy <a href="mailto:biuro@provena.com.pl">biuro@provena.com.pl</a> informacji o <b>chęci udziału w Konferencji z podaniem swojego imienia i nazwiska, adresu e-mail, numeru telefonu komórkowego oraz miejsca pracy</b>.-->
+<!--      </p>-->
+<!--      <p>-->
+<!--        15 lipca upływa ostateczny termin opłacenia udziału w Konferencji dla osób już zarejestrowanych.<br>-->
+<!--        Po tym terminie organizator będzie się indywidualnie kontaktował z osobami z listy rezerwowej informując o możliwości udziału w Konferencji NEONURSING 2025.-->
+<!--      </p>-->
+<!--    </div>-->
   </section>
   <section id="interprofesjonalna-opieka-nad-kobieta-i-noworodkiem" class="app-section-block place-items-center text-justify">
     <div class="app-section-title self-start">
