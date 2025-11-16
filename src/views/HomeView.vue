@@ -31,6 +31,7 @@ const posty = reactive([])
 const pendingRequest = ref(false)
 let kartka_wielkanoc = ref(false)
 let kartka_boze_narodzenie = ref(false)
+let kartka_dzien_wczesniaka = ref(false)
 
 async function requestTop3Posts() {
   if(pendingRequest.value){
@@ -63,6 +64,7 @@ onBeforeMount(async() => {
   })
   kartka_wielkanoc.value = setupData.isWielkanoc || false
   kartka_boze_narodzenie.value = setupData.isBozeNarodzenie || false
+  kartka_dzien_wczesniaka.value = setupData.isDzienWczesniaka || false
 })
 
 </script>
@@ -84,6 +86,11 @@ onBeforeMount(async() => {
     <div v-if="kartka_boze_narodzenie" class="app-section-block">
       <div class="flex justify-center mx-10 lg:mx-50 bg-white drop-shadow-xl">
         <img src="/img/boze_narodzenie_PTPiPN.jpg" class="max-h-full max-w-full object-contain"/>
+      </div>
+    </div>
+    <div v-if="kartka_dzien_wczesniaka" class="app-section-block">
+      <div class="flex justify-center mx-10 lg:mx-50 bg-white drop-shadow-xl">
+        <img src="/img/dzien_wczesniaka.png" class="max-h-full max-w-full object-contain"/>
       </div>
     </div>
     <div class="app-section-block place-items-center">
