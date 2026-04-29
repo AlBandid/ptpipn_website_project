@@ -90,7 +90,7 @@ onBeforeMount(async() => {
     </div>
     <div v-if="kartka_dzien_wczesniaka" class="app-section-block">
       <div class="flex justify-center mx-10 lg:mx-50 bg-white drop-shadow-xl">
-        <img src="/img/dzien_wczesniaka.png" class="max-h-full max-w-full object-contain"/>
+        <img src="/img/baner_dzien_wczesniaka.png" class="max-h-full max-w-full object-contain"/>
       </div>
     </div>
     <div class="app-section-block place-items-center">

@@ -10,20 +10,20 @@ const menuLeft = reactive([
     submenuVisible: false,
     submenus: [
       {
-        title: 'Neonursing 2025',
+        title: 'Neonursing 2026',
         name: 'konferencje',
         hash: '#neonursing'
       },
-      {
-        title: 'Interprofesjonalna opieka nad kobietą i noworodkiem',
-        name: 'konferencje',
-        hash: '#interprofesjonalna-opieka-nad-kobieta-i-noworodkiem'
-      },
-      {
-        title: 'Śląska Szkoła Neonatologii',
-        name: 'konferencje',
-        hash: '#slaska-szkola-neonatologii'
-      }
+      // {
+      //   title: 'Interprofesjonalna opieka nad kobietą i noworodkiem',
+      //   name: 'konferencje',
+      //   hash: '#interprofesjonalna-opieka-nad-kobieta-i-noworodkiem'
+      // },
+      // {
+      //   title: 'Śląska Szkoła Neonatologii',
+      //   name: 'konferencje',
+      //   hash: '#slaska-szkola-neonatologii'
+      // }
     ]
   },
   {

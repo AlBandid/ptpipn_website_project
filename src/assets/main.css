@@ -62,7 +62,7 @@ a {
   margin-inline-end: auto;
 }
 .app-link:hover {
-  color: var(--color-fuchsia-800);
+  color: var(--color-fuchsia-700);
 }
 
 .app-form-field {
