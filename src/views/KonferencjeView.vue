@@ -35,7 +35,7 @@ export default {
       <div class="md:flex-2/3">
         <p>
           Zapraszamy do udziału w X Ogólnopolskiej Konferencji Polskiego Towarzystwa Pielęgniarek
-          i Położnych NEONURSING 2026.Konferencja odbywać się będzie <b>3 października 2026 (sobota)
+          i Położnych NEONURSING 2026. Konferencja odbywać się będzie <b>3 października 2026 (sobota)
           w Hotelu Ambasador Premium ul. Kilińskiego 145 w Łodzi. Ramowe godziny trwania Konferencji
           9:00 – 17:15</b>
         </p>
