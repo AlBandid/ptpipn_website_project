@@ -18,13 +18,9 @@
         natomiast Waszym rodzicom jak najmniej trosk.
       </p>
       <p>
-        Dla wszystkich noworodków urodzonych przedwcześnie dekorujemy nasze oddziały.
-        Oto relacje fotograficzne tegorocznych obchodów.
-      </p>
-      <hr class="my-4">
-      <p>
+        Dla wszystkich noworodków urodzonych przedwcześnie dekorujemy nasze oddziały. <br>
         Wszystkie oddziały obchodzące Światowy Dzień Wcześniaka zachęcamy do przesyłania relacji
-        w formie zdjęć na nasz adres mailowy. Zdjęcia zostaną umieszczone na naszym FP na Facebook.
+        w formie zdjęć na nasz adres mailowy. Zdjęcia zostaną umieszczone na naszym FP w serwisie Facebook. <br>
         To ważny dzień dla naszych podopiecznych i ich rodziców. Pokażmy jak ich wspieramy.
       </p>
     </div>
