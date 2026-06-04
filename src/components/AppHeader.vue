@@ -14,11 +14,11 @@ const menuLeft = reactive([
         name: 'konferencje',
         hash: '#neonursing'
       },
-      // {
-      //   title: 'Interprofesjonalna opieka nad kobietą i noworodkiem',
-      //   name: 'konferencje',
-      //   hash: '#interprofesjonalna-opieka-nad-kobieta-i-noworodkiem'
-      // },
+      {
+        title: 'Interprofesjonalna opieka w zdrowiu kobiet',
+        name: 'konferencje',
+        hash: '#interprofesjonalna-opieka-w-zdrowiu-kobiet'
+      },
       // {
       //   title: 'Śląska Szkoła Neonatologii',
       //   name: 'konferencje',

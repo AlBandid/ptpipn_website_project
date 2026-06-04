@@ -31,7 +31,10 @@ export default {
       <p>Neonursing 2026</p>
     </div>
     <div class="flex flex-col md:flex-row-reverse gap-5 md:gap-15 place-items-stretch">
-      <div class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-contain bg-no-repeat"/>
+      <a v-if="rejestracja_otwarta"
+         class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-contain bg-no-repeat"
+         href="https://www.salonnaukowy.pl/rejestracja/" target="_blank" rel="noopener noreferrer"/>
+      <div v-else class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-contain bg-no-repeat"/>
       <div class="md:flex-2/3">
         <p>
           Zapraszamy do udziału w X Ogólnopolskiej Konferencji Polskiego Towarzystwa Pielęgniarek
@@ -88,63 +91,81 @@ export default {
 <!--        informując o możliwości udziału w Konferencji NEONURSING 2026.-->
 <!--      </p>-->
     </div>
-    <div class="mt-2">
-      <div class="place-items-center">
-        <RouterLink :to="{name: 'materialyWideo'}" class="app-button mx-auto max-w-50 lg:max-w-100 text-center">MATERIAŁY WIDEO DLA UCZESTNIKÓW</RouterLink>
-      </div>
+<!--    <div class="mt-2">-->
+<!--      <div class="place-items-center">-->
+<!--        <RouterLink :to="{name: 'materialyWideo'}" class="app-button mx-auto max-w-50 lg:max-w-100 text-center">MATERIAŁY WIDEO DLA UCZESTNIKÓW</RouterLink>-->
+<!--      </div>-->
+<!--      <p>-->
+<!--        Osoby zainteresowane dostępem do materiałów wideo proszone są o kontakt z organizatorem-->
+<!--        Centrum Doradczo-Szkoleniowe PROVENA <a class="app-link" href="mailto:biuro@provena.com.pl">biuro@provena.com.pl</a>-->
+<!--      </p>-->
+<!--    </div>-->
+  </section>
+
+  <section id="interprofesjonalna-opieka-w-zdrowiu-kobiet" class="app-section-block place-items-center text-justify">
+    <div class="app-section-title self-start">
+      <p>Interprofesjonalna opieka w zdrowiu kobiet – wyzwania i dobre praktyki</p>
+    </div>
+    <a class="w-100 h-57 md:w-200 md:h-113 place-self-center bg-[url(/img/Konferencja_Polozne_Kazimierz_2026_baner_internet.jpg)] bg-contain bg-no-repeat"
+       href="https://konferencjapoloznicza2026.agora-konferencje.pl" target="_blank" rel="noopener noreferrer"/>
+    <div class="text-center -mt-5 md:-mt-15"><b>
+      II Ogólnopolska Konferencja Naukowa dla Położnych<br>
+      oraz Pielęgniarek Neonatologicznych<br>
+      Interprofesjonalna opieka w zdrowiu kobiet – wyzwania i dobre praktyki<br>
+      16 - 17 października 2026 r.<br>
+      Zajazd Piastowski ***, Kazimierz Dolny
+    </b></div>
+    <div class="text-justify">
       <p>
-        Osoby zainteresowane dostępem do materiałów wideo proszone są o kontakt z organizatorem
-        Centrum Doradczo-Szkoleniowe PROVENA <a class="app-link" href="mailto:biuro@provena.com.pl">biuro@provena.com.pl</a>
+        Szanowni Państwo,
+      </p>
+      <p>
+        Zapraszamy w dniach 16–17 października 2026 roku do Kazimierza Dolnego.
+      </p>
+      <a class="app-link" href="https://konferencjapoloznicza2026.agora-konferencje.pl" target="_blank" rel="noopener noreferrer">
+        https://konferencjapoloznicza2026.agora-konferencje.pl
+      </a>
+      <p>
+        Tegoroczna edycja Konferencji będzie kontynuacją idei tworzenia przestrzeni do pogłębionej refleksji,
+        wymiany doświadczeń oraz prezentacji aktualnych osiągnięć naukowych i praktycznych w obszarze
+        opieki nad kobietą, matką i noworodkiem. W centrum rozważań znajdzie się zdrowie kobiet na różnych
+        etapach życia, ujmowane nie tylko w wymiarze klinicznym, lecz także psychospołecznym, edukacyjnym,
+        etycznym i organizacyjnym.
+      </p>
+      <p>
+        Celem Konferencji jest stworzenie forum dialogu dla specjalistów zaangażowanych w opiekę nad kobietą
+        i noworodkiem: położnych, pielęgniarek neonatologicznych, przedstawicieli nauk medycznych i nauk o zdrowiu,
+        praktyków klinicznych, nauczycieli akademickich oraz osób odpowiedzialnych za rozwój jakości opieki.
+        Szczególne znaczenie nadamy współpracy interprofesjonalnej, która we współczesnym systemie ochrony zdrowia
+        staje się warunkiem skutecznej, bezpiecznej i humanistycznej opieki.
+      </p>
+      <p>
+        Program Konferencji obejmie szeroki zakres zagadnień dotyczących zdrowia kobiet, opieki okołoporodowej
+        i neonatologicznej, a także współczesnych wyzwań klinicznych, psychospołecznych i organizacyjnych.
+        Szczególne miejsce zajmą tematy związane z jakością i humanizacją opieki, bezpieczeństwem pacjentek
+        i noworodków, współpracą interprofesjonalną oraz rolą nowych technologii w praktyce zawodowej.
+      </p>
+      <p>
+        Istotnym elementem wydarzenia będą również warsztaty, które umożliwią uczestnikom pogłębienie umiejętności
+        praktycznych oraz odniesienie wiedzy naukowej do codziennej pracy klinicznej. Wierzę, że połączenie wykładów
+        eksperckich, dyskusji, sesji tematycznych i zajęć warsztatowych będzie sprzyjać nie tylko zdobywaniu
+        aktualnej wiedzy, lecz także refleksji nad kierunkami rozwoju współczesnej opieki położniczej,
+        ginekologicznej i neonatologicznej.
+      </p>
+      <p>
+        Jestem przekonana, że udział w Konferencji będzie okazją do inspirujących spotkań, wymiany dobrych praktyk
+        oraz budowania współpracy pomiędzy środowiskami naukowymi i klinicznymi. Mam nadzieję, że wspólnie
+        stworzymy wydarzenie, które przyczyni się do dalszego rozwoju profesjonalnej, empatycznej i opartej
+        na dowodach opieki nad kobietą, matką i noworodkiem.
+      </p>
+      <p>Serdecznie zapraszam do udziału w Konferencji.</p>
+      <p>Z wyrazami szacunku,</p>
+      <p>
+        Dr hab. Agnieszka Bień, prof. uczelni<br>
+        Przewodnicząca Komitetu Naukowego
       </p>
     </div>
   </section>
-
-<!--  <section id="interprofesjonalna-opieka-nad-kobieta-i-noworodkiem" class="app-section-block place-items-center text-justify">-->
-<!--    <div class="app-section-title self-start">-->
-<!--      <p>Interprofesjonalna opieka nad kobietą i noworodkiem – wyzwania i dobre praktyki</p>-->
-<!--    </div>-->
-<!--    <div class="w-100 h-57 md:w-200 md:h-113 place-self-center bg-[url(/img/Konferencja_Poloznictwo_Lublin_2025_baner_www_600x338_px.jpg)] bg-contain bg-no-repeat"/>-->
-<!--    <div class="text-justify">-->
-<!--      <p>-->
-<!--        Szanowni Państwo,-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        w dniach <b>17–18 października 2025 roku</b> w Lublinie odbędzie się Konferencja pt.-->
-<!--        <i>„Interprofesjonalna opieka nad kobietą i noworodkiem – wyzwania i dobre praktyki”</i>.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        To wyjątkowe wydarzenie będzie przestrzenią do bezpośredniej wymiany doświadczeń,-->
-<!--        prezentacji wyników najnowszych badań naukowych oraz dyskusji na temat współczesnych-->
-<!--        wyzwań w opiece nad kobietą i dzieckiem, z uwzględnieniem interprofesjonalnego podejścia-->
-<!--        i ścisłej współpracy między zawodami medycznymi.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        Celem Konferencji jest stworzenie forum dialogu i refleksji nad zagadnieniami związanymi z-->
-<!--        opieką nad kobietą i noworodkiem – zarówno z perspektywy klinicznej, jak i-->
-<!--        psychospołecznej.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        Uczestnicy będą mieli okazję zapoznać się z najnowszymi doniesieniami naukowymi,-->
-<!--        aktualnymi standardami postępowania, nowoczesnymi metodami diagnostycznymi i-->
-<!--        terapeutycznymi, a także z przykładami sprawdzonych praktyk klinicznych. Nie zabraknie-->
-<!--        również tematów poświęconych współpracy interprofesjonalnej, wsparciu-->
-<!--        psychospołecznemu, roli edukacji oraz potrzebie ciągłego rozwoju zawodowego – zwłaszcza-->
-<!--        w kontekście dynamicznych zmian zachodzących w systemie ochrony zdrowia.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        Jestem przekonana, że bogaty program merytoryczny, obecność uznanych ekspertów oraz-->
-<!--        możliwość bezpośrednich spotkań sprawią, iż udział w konferencji będzie nie tylko źródłem-->
-<!--        aktualnej wiedzy, lecz także inspiracją do dalszej współpracy, refleksji i rozwoju-->
-<!--        zawodowego.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        Z wyrazami szacunku,<br>Dr hab. Agnieszka Bień, prof. uczelni-->
-<!--      </p>-->
-<!--      <a class="app-link" href="https://pielegniarkilublin2025.agora-konferencje.pl" target="_blank" rel="noopener noreferrer">-->
-<!--        www.pielegniarkilublin2025.agora-konferencje.pl-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </section>-->
 
 <!--  <section id="slaska-szkola-neonatologii" class="app-section-block">-->
 <!--    <div class="app-section-title self-start">-->
