@@ -32,9 +32,9 @@ export default {
     </div>
     <div class="flex flex-col md:flex-row-reverse gap-5 md:gap-15 place-items-stretch">
       <a v-if="rejestracja_otwarta"
-         class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-contain bg-no-repeat"
+         class="h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-center bg-contain bg-no-repeat"
          href="https://www.salonnaukowy.pl/rejestracja/" target="_blank" rel="noopener noreferrer"/>
-      <div v-else class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-contain bg-no-repeat"/>
+      <div v-else class="w-60 h-60 mx-auto md:w-auto md:h-auto md:flex-1/3 bg-[url(/img/Neonursing_2026.jpg)] bg-center bg-contain bg-no-repeat"/>
       <div class="md:flex-2/3">
         <p>
           Zapraszamy do udziału w X Ogólnopolskiej Konferencji Polskiego Towarzystwa Pielęgniarek
