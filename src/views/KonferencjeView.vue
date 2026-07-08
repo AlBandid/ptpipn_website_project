@@ -60,7 +60,7 @@ export default {
           Nr konta: Alior Bank 25 2490 0005 0000 4500 4288 5665
         </p>
         <p>
-          <b>Ostateczny termin dokonania wpłaty upływa 15 września 2026.</b> <br>
+<!--          <b>Ostateczny termin dokonania wpłaty upływa 15 września 2026.</b> <br>-->
           Organizator zastrzega możliwość wcześniejszego wstrzymania rejestracji na Konferencję,
           jeśli wszystkie miejsca zostaną zajęte.
         </p>
@@ -79,17 +79,17 @@ export default {
         Ze względu na wyczerpanie się miejsc na Konferencję NEONURSING 2026 rejestracja została
         zamknięta i utworzona jest lista rezerwowa.
       </p>
-<!--      <p>-->
-<!--        Osoby zainteresowane udziałem proszone są o kontakt z organizatorem Centrum Doradczo-Szkoleniowe-->
-<!--        PROVENA poprzez wysłanie na adres mailowy <a class="app-link" href="mailto:biuro@provena.com.pl">-->
-<!--        biuro@provena.com.pl</a> informacji o <b>chęci udziału w Konferencji z podaniem swojego-->
-<!--        imienia i nazwiska, adresu e-mail, numeru telefonu komórkowego oraz miejsca pracy</b>.-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        15 września upływa ostateczny termin opłacenia udziału w Konferencji dla osób już zarejestrowanych.<br>-->
-<!--        Po tym terminie organizator będzie się indywidualnie kontaktował z osobami z listy rezerwowej-->
-<!--        informując o możliwości udziału w Konferencji NEONURSING 2026.-->
-<!--      </p>-->
+      <p>
+        Osoby zainteresowane udziałem proszone są o kontakt z organizatorem Centrum Doradczo-Szkoleniowe
+        PROVENA poprzez wysłanie na adres mailowy <a class="app-link" href="mailto:biuro@provena.com.pl">
+        biuro@provena.com.pl</a> informacji o <b>chęci udziału w Konferencji z podaniem swojego
+        imienia i nazwiska, adresu e-mail, numeru telefonu komórkowego oraz miejsca pracy</b>.
+      </p>
+      <p>
+        22 lipca upływa ostateczny termin opłacenia udziału w Konferencji dla osób już zarejestrowanych.<br>
+        Po tym terminie organizator będzie się indywidualnie kontaktował z osobami z listy rezerwowej
+        informując o możliwości udziału w Konferencji NEONURSING 2026.
+      </p>
     </div>
 <!--    <div class="mt-2">-->
 <!--      <div class="place-items-center">-->
